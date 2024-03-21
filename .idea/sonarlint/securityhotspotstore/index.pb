@@ -10,3 +10,6 @@ L
 static/styles/promo-page.css,9\a\9af9c2a772c489d9c6ee4cafabc22c2effe62dd0
 I
 templates/promo-page.html,a\5\a59598489d7f6e967d4c5b4cea4038a5d1657f51
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
