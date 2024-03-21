@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plaster&display=swap');
+
+@font-face {
+    font-family: 'Press Start 2P Regular';
+    src: url('../fonts/press_start_2p_regular.eot');
+    /* IE 9 Compatibility Mode */
+    src: url('../fonts/press_start_2p_regular.eot?#iefix') format('embedded-opentype'),
+        /* IE < 9 */
+        url('../fonts/press_start_2p_regular.woff2') format('woff2'),
+        /* Super Modern Browsers */
+        url('../fonts/press_start_2p_regular.woff') format('woff'),
+        /* Firefox >= 3.6, any other modern browser */
+        url('../fonts/press_start_2p_regular.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('../fonts/press_start_2p_regular.svg#press_start_2p_regular') format('svg');
+    /* Chrome < 4, Legacy iOS */
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+    font-size: 15px;
+    background-color: rgb(34, 34, 34);
+    font-family: "Montserrat";
+    color: aliceblue;
+
+}
+
+
+/* хедер */
+header {
+    /* background-color: rgba(92, 199, 164, 0.603); */
+    padding: 2rem;
+}
+
+.header-container {
+    margin: 0 auto;
+    max-width: 900px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: 'Press Start 2P Regular';
+
+
+}
+
+nav a {
+    margin-left: 1rem;
+    text-decoration: none;
+    background-color: #75eab3ef;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: black;
+}
+
+/* основная часть главной страницы */
+.main-container {
+    margin: 3rem auto;
+    max-width: 900px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-container img {
+    max-width: 20rem;
+    border-radius: 2rem;
+}
+.right-column {
+    background-color: rgb(59, 59, 59);
+    border-radius: 3rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.right-column p {
+    font-size: 1.5rem;
+    margin-bottom: 5rem;
+}
+
+.right-column a {
+    text-decoration: none;
+    background-color: rgb(159, 159, 159);
+
+    color: black;
+    padding: 1.5rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+    width: 10rem;
+    text-align: center;
+    /* margin-top: 100rem; */
+
+}
