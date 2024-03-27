@@ -85,7 +85,7 @@ nav a:hover {
 
 .right-column {
   width: 60%;
-  background-image: url('../img/bg2.jpg');
+  /* background-image: url('../img/bg2.jpg'); */
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -157,3 +157,30 @@ nav a:hover {
     object-fit: cover;
   }
 }
+
+
+
+/* регистрация и вход */
+.authorization {
+  display: flex;
+  justify-content: center;
+}
+
+.authorization form {
+  width: 30rem;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+
+.authorization input {
+  border: 1px solid var(--yellow);
+  box-shadow: none;
+  margin: 0.5rem;
+  outline: none;
+  background-color: var(--var5);
+}
+
+
