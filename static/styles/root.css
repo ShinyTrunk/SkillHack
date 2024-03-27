@@ -1,0 +1,13 @@
+:root {
+  --dark: #17171a;
+  --white: #eae5d4;
+  --red: #a34b48;
+  --white-blue: #817598;
+  --brown: #452a2f;
+  --yellow: #c09a6f;
+  --white-red: #75514f;
+  --white-green: #8c948c;
+  --dark-white-blue: #47495d;
+  --var5: #51545b;
+  --one-wh: calc(1vh + 1vw);
+}
