@@ -25,12 +25,21 @@
         </div>
     </header>
     <main>
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+          </label>
         <div class="wrapper">
-   
+
             <div class="authorization-forms">
                 <div class="authorization-toggler">
-                    <span>Регистрация</span>
-                    <span class="toggle">toggle</span>
+                    <span class="active-span">Регистрация</span>
+                    <label class="switch toggle">
+                        <input type="checkbox">
+                        <div class="slider"></div>
+                      </label>
+                    
+
                     <span>Вход</span>
                 </div>
                 <section class="register">
@@ -39,23 +48,24 @@
                         <input type="email" placeholder="EMAIL">
                         <input type="password" placeholder="ВАШ ПАРОЛЬ">
                         <input type="password" placeholder="ПОВТОРИТЕ ПАРОЛЬ">
-                        <input type="submit" value="ЗАРЕГИСТРИРОВАТЬСЯ">
+                        <input id="registration-button" type="submit" value="ЗАРЕГИСТРИРОВАТЬСЯ" class="red-button">
                     </form>
-                </section>  
-    
-    
+                </section>
+
+
                 <section class="login hidden">
                     <form>
                         <input type="email" placeholder="EMAIL">
                         <input type="password" placeholder="ВАШ ПАРОЛЬ">
                         <input type="radio" placeholder="ЗАПОМНИТЬ МЕНЯ">
-                        <a href="#">ВОЙТИ</a>
+                        <input id="login-button" type="submit" value="ВОЙТИ" class="red-button">
+
                     </form>
-    
+
                 </section>
             </div>
         </div>
-        
+
 
     </main>
 
