@@ -73,7 +73,8 @@ nav a {
   color: var(--white);
   font-size: calc(var(--one-wh) * 1);
   line-height: calc(var(--one-wh) * 1);
-  font-variant: small-caps;
+  /* font-variant: small-caps; */
+  text-transform: uppercase;
   transition: all 0.3s ease;
 
 }
@@ -189,27 +190,19 @@ nav a:hover {
 
 }
 
-.authorization-forms {
-  width: 35%;
-  /* margin: 0 auto; */
-  margin-top: -20px;
-  border: 2px solid var(--white);
 
-  background-color: var(--dark);
-
-}
 
 .authorization-toggler {
   display: flex;
   justify-content: center;
   border-bottom: 2px solid var(--white);
-
+  /* height: 30px; */
 }
 
 
 .authorization-toggler span {
-  padding: 1rem 0;
-  text-align: center;
+  padding: 0.2rem 0;
+  /* text-align: center; */
   font-family: "Press Start 2P Regular";
   color: var(--var5);
   font-size: calc(var(--one-wh) * 0.8);
@@ -217,34 +210,42 @@ nav a:hover {
   border: 2px solid rgba(255, 0, 0, 0);
   transition: 0.3s ease;
 
+
+
 }
 
 .active-span {
-
-  color: var(--dark);
-  background-color: var(--white);
+  color: var(--white) !important;
+  background-color: var(--white-green);
 }
 
-.authorization-forms form {
+
+.authorization-forms .register-form {
   padding: 2rem;
+}
+.authorization-forms .login-form {
+  padding: 6.5rem 2rem;
 }
 
 .authorization-toggler span:first-child {
-  width: 45%;
+  width: calc(50% - 15px);
   text-align: left;
+  
+  /* height: 100%; */
+  padding: 1rem none;
   padding-left: 1rem;
-
-
 }
 
 .authorization-toggler span:last-child {
-  width: 45%;
+  width: calc(50% - 15px);
   text-align: right;
+  padding: 1rem none;   
   padding-right: 1rem;
+  /* height: 100%; */
 }
 
 .authorization-toggler .toggle {
-  width: 10%;
+  width: 30px;
 }
 
 
@@ -257,8 +258,6 @@ nav a:hover {
   display: inline-block;
   border-radius: 20px;
 
-  /* width: 60px; */
-  /* height: 34px; */
 }
 
 /* Скрыть флажок HTML по умолчанию */
@@ -271,14 +270,14 @@ nav a:hover {
 /* Ползунок */
 .slider {
 
-  border-radius: 15px;
+  border-radius: 15px;  
   position: absolute;
   cursor: pointer;
   top: 0;
   left: -20px;
   right: -20px;
   bottom: 0;
-  background-color: var(--var5);
+  background-color: var(--white-green);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -288,19 +287,23 @@ nav a:hover {
   border-radius: 13px;
   position: absolute;
   content: "";
-  /* height: 100%; */
   width: 26px;
   left: 2px;
   bottom: 2px;
   top: 2px;
+  display: block;
+  background: url("../img/double_arrow.png");
+  background-position: center center;
+  background-repeat: no-repeat;
   background-color: var(--white);
+  background-size: 45% 45%;
   -webkit-transition: .4s;
   transition: .4s;
 }
 
-input:checked+.slider {
+/* input:checked+.slider {
   background-color: var(--red);
-}
+} */
 
 input:focus+.slider {
   box-shadow: 0 0 1px var();
@@ -309,7 +312,7 @@ input:focus+.slider {
 input:checked+.slider:before {
   /* -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px); */
-  transform: translateX(calc(100%));
+  transform: translateX(calc(45px));
 }
 
 
@@ -323,12 +326,20 @@ input:checked+.slider:before {
   color: var(--white-blue);
   border-color: var(--white);
 } */
+.authorization-forms {
+  width: 35%;
+  margin-top: -20px;
+  border: 2px solid var(--white);
+  background-color: var(--dark);
+
+}
+
 
 
 .authorization-forms input {
   display: block;
   width: 100%;
-  margin-top: 3rem;
+  margin-bottom: 3rem;
   /* height: 4rem; */
   font-size: calc(var(--one-wh) * 0.8);
   padding: 0.5rem;
@@ -344,7 +355,11 @@ input:checked+.slider:before {
 }
 
 
-
+@media screen and (max-width: 1100px) {
+  .authorization-forms {
+    width: 50%;
+  }
+}
 @media screen and (max-width: 900px) {
   .authorization-forms {
     width: 60%;
