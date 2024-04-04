@@ -1,41 +1,17 @@
-<html lang="ru">
+{% extends "base.html" %}
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../static/styles/reset.css" />
-  <link rel="stylesheet" href="../static/styles/root.css" />
-  <link rel="stylesheet" href="../static/styles/fonts.css" />
-  <link rel="stylesheet" href="../static/styles/main.css" />
-  <title>Главная</title>
-</head>
-
-<body>
-  <header>
-    <div class="header-container container">
-      <a href="#" class="logo">SKILLHACK</a>
-      <nav>
-        <a href="#">навыки</a>
-        <a href="#">о нас</a>
-        <a href="#">обратная связь</a>
-        <a href="#">вход</a>
-        <a href="#">регистрация</a>
-      </nav>
-    </div>
-  </header>
-  <main>
+{% block content %}
+<main>
     <div class="main-container">
-      <div class="main-content left-column">
-        <h1>SKILLHACK<br>качай своего героя - качай свои скилы</h1>
-        <a class="red-button" href="#">к навыкам</a>
-      </div>
-      <div class="video-box right-column">
-        <video preload="auto" autoplay="autoplay" loop="loop" muted="" playsinline="playsinline">
-          <source src="../static/video/bg.mp4" type="video/mp4" />
-        </video>
-      </div>
+        <div class="main-content left-column">
+            <h1>SKILLHACK<br>качай своего героя - качай свои скилы</h1>
+            <a class="red-button" href="#">к навыкам</a>
+        </div>
+        <div class="video-box right-column">
+            <video preload="auto" autoplay="autoplay" loop="loop" muted="" playsinline="playsinline">
+                <source src="../static/video/bg.mp4" type="video/mp4"/>
+            </video>
+        </div>
     </div>
-  </main>
-</body>
-
-</html>
+</main>
+{% endblock %}
