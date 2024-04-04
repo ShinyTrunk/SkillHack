@@ -37,10 +37,10 @@
                     <span >вход</span>
                 </div>
                 <form class="register-form">
-                    <input type="text" placeholder="ВАШ НИКНЕЙМ">
-                    <input type="email" placeholder="EMAIL">
-                    <input type="password" placeholder="ВАШ ПАРОЛЬ">
-                    <input type="password" placeholder="ПОВТОРИТЕ ПАРОЛЬ">
+                    <input type="text" placeholder="ВАШ НИКНЕЙМ" required>
+                    <input type="email" placeholder="EMAIL" required>
+                    <input type="password" placeholder="ВАШ ПАРОЛЬ" required>
+                    <input type="password" placeholder="ПОВТОРИТЕ ПАРОЛЬ" required maxlength="7">
                     <input id="registration-button" type="submit" value="ЗАРЕГИСТРИРОВАТЬСЯ" class="red-button">
                 </form>
                 <form class="login-form hidden" >
@@ -62,8 +62,6 @@
             <div class="message">
                 <p>Пароли должны совпадать</p>
                 <p>Не заполнено поля пароля</p>
-
-                    
             </div>
         </div>
 

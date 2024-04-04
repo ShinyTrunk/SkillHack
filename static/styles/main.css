@@ -445,27 +445,68 @@ input:checked+.slider:before {
 
 
 
+
+
+
+@keyframes slide-p {
+  from {
+    transform: translateX(30rem);
+  }
+
+  to {
+    transform: translateX(0px);
+  }
+}
+@keyframes delete-p {
+  /* from {
+    color: green;
+  } */
+  to {
+    opacity: 0;
+    /* color: red; */
+  }
+}
+.deleted {
+  animation-fill-mode: forwards !important;
+  animation-name: delete-p !important;
+  animation-duration: 0.4s !important;
+  
+}
 .message {
   position: fixed;
-  right: 3rem;
-  bottom: 5rem;
+
+  right: 1rem;
+  bottom: 1rem;
   /* background-color: var(--dark);
   color: ; */
 
 }
-
 .message:empty {
   display: none;
 }
 
 .message>p {
+
   color: var(--red);
   font-size: 1.5rem;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   border: 2px solid var(--red);
   /* border-top: 2px solid var(--red); */
   margin-bottom: 1rem;
+  transition: 0.2s;
+  /* transform: translateX(400px); */
+  /* transform: rotateX(90); */
+  animation-fill-mode: forwards;
+  animation-name: slide-p;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  /* transition-delay: 2s; */
 } 
+.message>p:hover {
+  opacity: 0.5;
+  
+}
+
 @media screen and (max-width: 1100px) {
   .authorization-forms {
     width: 50%;
@@ -505,7 +546,7 @@ input:checked+.slider:before {
   justify-content: center;
   color: var(--white);
   flex-direction: column;
-  padding: 2rem 4rem;
+  padding: 1rem 3rem;
   border: 3px solid var(--white-green);
   font-size: 1.4rem;
 }
@@ -536,3 +577,4 @@ input:checked+.slider:before {
 
 
 /* прогресс */  
+

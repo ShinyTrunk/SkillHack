@@ -16,11 +16,26 @@ formToggle.addEventListener("change", function () {
     loginForm.classList.toggle("hidden");
 })
 
+// message 
+let messageDiv = document.querySelector(".message");
+messageDiv.addEventListener('click', function (event){
+    let target = event.target;
+    console.log(target);
+    target.classList.add("deleted");
+    
+
+});
+
 
 // редактирование личных данных в аккаунте, надо <p> заменять на <input>, <a> на <submit>
 
 let personalDataP = document.querySelectorAll(".personal-data p");
 let editButton = document.querySelector(".personal-data .edit-button");
+
+
+
+
+
 
 
 
