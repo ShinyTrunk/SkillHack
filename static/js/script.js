@@ -27,14 +27,6 @@ messageDiv.addEventListener('click', function (event){
 });
 
 
-// редактирование личных данных в аккаунте, надо <p> заменять на <input>, <a> на <submit>
-
-let personalDataP = document.querySelectorAll(".personal-data p");
-let editButton = document.querySelector(".personal-data .edit-button");
-
-
-
-
 
 
 
