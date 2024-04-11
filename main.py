@@ -10,6 +10,8 @@ from forms.login_form import LoginForm
 
 fake = Faker()
 
+if 'db' not in os.listdir():
+    os.mkdir('db')
 file_path = f'{os.path.abspath(os.getcwd())}\\db\\main.db'
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + file_path
