@@ -14,7 +14,7 @@
                 </label>
                 <span>вход</span>
             </div>
-            <form class="register-form">
+            <form class="register-form" method="POST">
                 {{ register_form.hidden_tag() }}
                 {{ register_form.username(placeholder="ВАШ НИКНЕЙМ") }}
                 {{ register_form.email(placeholder="EMAIL") }}
@@ -22,7 +22,7 @@
                 {{ register_form.confirm_password(placeholder="ПОВТОРИТЕ ПАРОЛЬ") }}
                 {{ register_form.registration_button(value="ЗАРЕГИСТРИРОВАТЬСЯ", class="red-button") }}
             </form>
-            <form class="login-form hidden">
+            <form class="login-form hidden" method="POST">
                 {{ login_form.hidden_tag() }}
                 {{ login_form.email(placeholder="EMAIL") }}
                 {{ login_form.password(placeholder="ВАШ ПАРОЛЬ") }}
@@ -33,7 +33,8 @@
                     <div class="checkbox__body">ЗАПОМНИТЬ МЕНЯ</div>
                 </label>
 
-                <input id="login-button" type="submit" value="ВОЙТИ" class="red-button">
+<!--                <input id="login-button" type="submit" value="ВОЙТИ" class="red-button">-->
+                {{ login_form.login_button(value="ВОЙТИ", class="red-button") }}
 
             </form>
 
