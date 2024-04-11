@@ -1,109 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/styles/reset.css" />
-    <link rel="stylesheet" href="../static/styles/root.css" />
-    <link rel="stylesheet" href="../static/styles/fonts.css" />
-    <link rel="stylesheet" href="../static/styles/main.css" />
-    <title>Аккаунт</title>
-</head>
+{% block content %}
+<main>
+    <div class="account-container">
+        <section class="personal-data">
+            <img src="../static/img/avatar.png" alt="">
+            <div>
+                <span>ИМЯ ПОЛЬЗОВАТЕЛЯ</span>
+                <p>RWERRX</p>
+            </div>
+            <div>
+                <span>EMAIL</span>
+                <p>qwe@gamail.com</p>
+            </div>
+            <div>
+                <span>ПАРОЛЬ</span>
+                <p>............</p>
+            </div>
+            <a class="red-button edit-button">РЕДАКТИРОВАТЬ</a>
 
-<body>
-    <header>
-        <div class="header-container container">
-            <a href="#" class="logo">SKILLHACK</a>
-            <nav>
-                <a href="#">навыки</a>
-                <a href="#">о нас</a>
-                <a href="#">обратная связь</a>
-                <a href="#">вход</a>
-                <a href="#">регистрация</a>
-            </nav>
-        </div>
-    </header>
-    <main>
-        <div class="account-container">
-            <section class="personal-data">
-                <img src="../static/img/avatar.png" alt="">
-                <div>
-                    <span>ИМЯ ПОЛЬЗОВАТЕЛЯ</span>
-                    <p>RWERRX</p>
+        </section>
+        <section class="account-skills">
+            <div class="skill">
+                <p>PYTHON</p>
+                <div class="progress-other">
+                    <div class="progress-inner" data-percent="10"></div>
                 </div>
-                <div>
-                    <span>EMAIL</span>
-                    <p>qwe@gamail.com</p>
+            </div>
+            <div class="skill">
+                <p>JAVA</p>
+                <div class="progress-other">
+                    <div class="progress-inner" data-percent="45"></div>
                 </div>
-                <div>
-                    <span>ПАРОЛЬ</span>
-                    <p>............</p>
+            </div>
+            <div class="skill">
+                <p>HTML</p>
+                <div class="progress-other">
+                    <div class="progress-inner" data-percent="90"></div>
                 </div>
-                <a class="red-button edit-button">РЕДАКТИРОВАТЬ</a>
+            </div>
+            <div class="skill">
+                <p>PYTHON</p>
+                <div class="progress-other"><div  class="progress-inner" data-percent="10"></div></div>
+            </div>
+            <div class="skill">
+                <p>JAVA</p>
+                <div class="progress-other"><div  class="progress-inner" data-percent="45"></div></div>
+            </div>
+            <div class="skill">
+                <p>HTML</p>
+                <div class="progress-other"><div  class="progress-inner" data-percent="90"></div></div>
+            </div>
+            <div class="skill">
+                <p>PYTHON</p>
+                <div class="progress-other"><div  class="progress-inner" data-percent="10"></div></div>
+            </div>
+            <div class="skill">
+                <p>JAVA</p>
+                <div class="progress-other"><div  class="progress-inner" data-percent="45"></div></div>
+            </div>
+            <div class="skill">
+                <p>HTML</p>
+                <div class="progress-other"><div  class="progress-inner" data-percent="90"></div></div>
+            </div>
+            <div class="skill">
+                <p>C++</p>
+                <div class="progress-other"><div  class="progress-inner" data-percent="45"></div></div>
+            </div>
 
-            </section>
-            <section class="account-skills">
-                <div class="skill">
-                    <p>PYTHON</p>
-                    <div class="progress-other"><div  class="progress-inner" data-percent="10"></div></div>
-                </div>
-                <div class="skill">
-                    <p>JAVA</p>
-                    <div class="progress-other"><div  class="progress-inner" data-percent="45"></div></div>
-                </div>
-                <div class="skill">
-                    <p>HTML</p>
-                    <div class="progress-other"><div  class="progress-inner" data-percent="90"></div></div>
-                </div>
-                <!-- <div class="skill">
-                    <p>PYTHON</p>
-                    <div class="progress-other"><div  class="progress-inner" data-percent="10"></div></div>
-                </div>
-                <div class="skill">
-                    <p>JAVA</p>
-                    <div class="progress-other"><div  class="progress-inner" data-percent="45"></div></div>
-                </div>
-                <div class="skill">
-                    <p>HTML</p>
-                    <div class="progress-other"><div  class="progress-inner" data-percent="90"></div></div>
-                </div>
-                <div class="skill">
-                    <p>PYTHON</p>
-                    <div class="progress-other"><div  class="progress-inner" data-percent="10"></div></div>
-                </div>
-                <div class="skill">
-                    <p>JAVA</p>
-                    <div class="progress-other"><div  class="progress-inner" data-percent="45"></div></div>
-                </div>
-                <div class="skill">
-                    <p>HTML</p>
-                    <div class="progress-other"><div  class="progress-inner" data-percent="90"></div></div>
-                </div> -->
-                <!-- <div class="skill">
-                    <p>C++</p>
-                    <div class="progress-other"><div  class="progress-inner" data-percent="45"></div></div>
-                </div> -->
-                
-            </section>
+        </section>
 
-            
-        </div>
 
-    </main>
-    <script src="../static/js/account.js"></script>
-</body>
-<footer>
-    <a href="#" class="logo">SKILLHACK</a>
-        <nav>
-          <a href="#">навыки</a>
-          <a href="#">о нас</a>
-          <a href="#">обратная связь</a>
-          <a href="#">вход</a>
-          <a href="#">регистрация</a>
-        </nav>
-        <div>
-            
-        </div>
-  </footer>
-</html>
+    </div>
+</main>
+{% endblock %}

@@ -1,26 +1,71 @@
-from flask import Flask, render_template, redirect, request, abort
+import os
+import string
+from faker import Faker
 
+from flask import Flask, render_template, redirect, url_for
+from database_init import db
+from models.users import User
+from forms.register_form import RegistrationForm
+from forms.login_form import LoginForm
+
+fake = Faker()
+
+file_path = f'{os.path.abspath(os.getcwd())}\\db\\main.db'
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + file_path
+app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
 
 def main():
-    pass
+    db.init_app(app)
+    app.app_context().push()
+    db.create_all()
+    print('Database')
+    app.run(port=5002, debug=True)
 
 
 @app.route('/')
 @app.route('/index')
 def index():
-    pass
+    # user = User(username=fake.name(), hashed_password=fake.postcode(), email=fake.ascii_free_email())
+    # db.session.add(user)
+    # db.session.commit()
+    return render_template('index.html')
 
 
 @app.route('/skills')
 def skills_page():
-    pass
+    return "<h1>Skills</h1>"
 
 
-@app.route('/login')
+@app.route('/skill/<skill_name>')
+def skill_page(skill_name):
+    params = {'title': f'Навык {skill_name}', 'skill_name': skill_name}
+
+
+@app.route('/sign-in-sign-up', methods=['GET', 'POST'])
 def login_page():
-    pass
+    register_form = RegistrationForm()
+    login_form = LoginForm()
+    params = {'register_form': register_form, 'login_form': login_form}
+    if register_form.validate_on_submit() and register_form.registration_button.data:
+        print('register')
+        user = User(username=register_form.username.data, email=register_form.email.data)
+        user.set_password(register_form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        return redirect(url_for('profile_page'))
+    if login_form.validate_on_submit() and login_form.login_button.data:
+        print('login')
+        current_user_email = (login_form.email.data, )
+        users_email = db.session.query(User.email).all()
+        print((login_form.email.data, ), users_email[current_user_email])
+        if (login_form.email.data, ) in users_email:
+            print('YEAAAA')
+            if login_form.password.data == users_email.password:
+                print('good pass')
+        return redirect('profile_page')
+    return render_template('register.html', **params)
 
 
 @app.route('/about-us')
@@ -30,8 +75,7 @@ def about_us_page():
 
 @app.route('/profile')
 def profile_page():
-    pass
-
+    return render_template('account.html')
 
 
 if __name__ == '__main__':

@@ -1,0 +1,43 @@
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="../static/styles/reset.css"/>
+    <link rel="stylesheet" href="../static/styles/root.css"/>
+    <link rel="stylesheet" href="../static/styles/fonts.css"/>
+    <link rel="stylesheet" href="../static/styles/main.css"/>
+    <title>Главная</title>
+</head>
+
+<body>
+  <header>
+      <div class="header-container container">
+          <a href="#" class="logo">SKILLHACK</a>
+          <nav>
+              <a href="#">навыки</a>
+              <a href="#">о нас</a>
+              <a href="#">обратная связь</a>
+              <a href="/sign-in-sign-up">вход</a>
+              <a href="/sign-in-sign-up">регистрация</a>
+          </nav>
+      </div>
+  </header>
+  {% block content %}{% endblock %}
+  <footer>
+    <a href="#" class="logo">SKILLHACK</a>
+    <nav>
+        <a href="#">навыки</a>
+        <a href="#">о нас</a>
+        <a href="#">обратная связь</a>
+        <a href="#">вход</a>
+        <a href="#">регистрация</a>
+    </nav>
+    <div>
+
+    </div>
+</footer>
+  <script src="../static/js/script.js"></script>
+</body>
+
+</html>
