@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../static/styles/root.css"/>
     <link rel="stylesheet" href="../static/styles/fonts.css"/>
     <link rel="stylesheet" href="../static/styles/main.css"/>
-    <title>Главная</title>
+    <!-- <title>Главная</title> -->
 </head>
 
 <body>
@@ -25,19 +25,24 @@
   </header>
   {% block content %}{% endblock %}
   <footer>
-    <a href="#" class="logo">SKILLHACK</a>
-    <nav>
-        <a href="#">навыки</a>
-        <a href="#">о нас</a>
-        <a href="#">обратная связь</a>
-        <a href="#">вход</a>
-        <a href="#">регистрация</a>
-    </nav>
-    <div>
-
+    <div class="header-container">
+        <a href="#" class="logo">SKILLHACK</a>
+        <nav class="footer-nav">
+            <a href="#">навыки</a>
+            <a href="#">о нас</a>
+            <a href="#">обратная связь</a>
+            <a href="#">вход</a>
+            <a href="#">регистрация</a>
+        </nav>
+        <div>
+            <a href="">социальные сети</a>
+        </div>
     </div>
+    
+    
 </footer>
-  <script src="../static/js/script.js"></script>
+
+
 </body>
 
 </html>

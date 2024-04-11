@@ -52,21 +52,21 @@ def login_page():
     params = {'register_form': register_form, 'login_form': login_form}
     if register_form.validate_on_submit() and register_form.registration_button.data:
         print('register')
-        user = User(username=register_form.username.data, email=register_form.email.data)
-        user.set_password(register_form.password.data)
+        user = User(username=register_form.username.data, email=register_form.register_email.data)
+        user.set_password(register_form.register_password.data)
         db.session.add(user)
         db.session.commit()
         return redirect(url_for('profile_page'))
     if login_form.validate_on_submit() and login_form.login_button.data:
         print('login')
-        current_user_email = (login_form.email.data, )
+        current_user_email = (login_form.login_email.data, )
         users_email = db.session.query(User.email).all()
-        print((login_form.email.data, ), users_email[current_user_email])
-        if (login_form.email.data, ) in users_email:
+        # print((login_form.login_email.data, ), users_email[current_user_email])
+        if (login_form.login_email.data, ) in users_email:
             print('YEAAAA')
-            if login_form.password.data == users_email.password:
+            if login_form.login_password.data == users_email.password:
                 print('good pass')
-        return redirect('profile_page')
+        return redirect(url_for('profile_page'))
     return render_template('register.html', **params)
 
 

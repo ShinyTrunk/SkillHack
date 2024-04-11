@@ -83,6 +83,23 @@ nav a:hover {
   color: var(--white-red);
 }
 
+/* .footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
+footer {
+  background-color: var(--dark);
+  height: 10%;
+}
+footer .logo {
+  font-size: calc(var(--one-wh) * 0.8);
+  line-height: calc(var(--one-wh) * 0.8);
+}
+.footer-nav a{
+  font-size: 1rem;
+}
+
 .main-container {
   display: flex;
   height: 100%;
@@ -533,7 +550,7 @@ input:checked+.slider:before {
 
 .account-container {
   max-width: 120rem;
-  padding: 3rem 2rem;
+  padding: 1rem 2rem;
   display: flex;
   height: 90%;
   justify-content: space-around;
@@ -549,7 +566,7 @@ input:checked+.slider:before {
   justify-content: center;
   color: var(--white);
   flex-direction: column;
-  padding: 1rem 3rem;
+  padding: 2rem 3rem;
   border: 3px solid var(--white-green);
   font-size: 1.4rem;
 }
@@ -572,6 +589,7 @@ input:checked+.slider:before {
   background-color: var(--dark);
   text-align: center;
   padding: 0.5rem 0;
+  margin-bottom: 2rem;
   font-size: 1rem;
 }
 
@@ -580,14 +598,14 @@ input:checked+.slider:before {
 
 
 .account-container .account-skills {
-  font-family: "Press Start 2P Regular";
+
     display: flex;
     flex-direction: column;
     color: var(--white);
     /* background-color: #fff; */
     flex-grow: 1;
     margin-left: 2.5rem;
-    justify-content: space-evenly ;
+    justify-content: center ;
     height: 100%;
     /* border: 3px solid var(--white-green); */
     /* margin-left: 3rem; */
@@ -613,19 +631,20 @@ input:checked+.slider:before {
 .account-container .skill:nth-child(3) .progress-inner{
   background-color: var(--yellow);
 }
-.account-container .skill p {
+.account-container .skill>p {
   margin-bottom: 1rem;
+  font-family: "Press Start 2P Regular";
 }
 
 /* прогресс */  
 
 .account-skills .progress-other {
   background-color: var(--dark);
-  height: 3rem;
+  /* height: 3rem;   */
   /* border: 2px solid; */
   /* padding: 1rem; */
   width: 100%;
-  padding: 0 0.3rem;
+  padding: 0.3rem;
   display: flex;
   align-items: center;
   /* border-radius: 2rem; */
@@ -644,7 +663,16 @@ input:checked+.slider:before {
 } */
 .account-skills .progress-inner {
   background-color: var(--white-green);
-  height: 2rem;
+  /* height: 2rem; */
+  padding-right: 0.5rem;
   /* border-radius: 1rem; */
   /* margin: 1rem; */
+}
+.account-skills .progress-inner>p {
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.2rem;
+  text-align: right;
+  
 }

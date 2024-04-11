@@ -17,15 +17,23 @@
             <form class="register-form" method="POST">
                 {{ register_form.hidden_tag() }}
                 {{ register_form.username(placeholder="ВАШ НИКНЕЙМ") }}
-                {{ register_form.email(placeholder="EMAIL") }}
-                {{ register_form.password(placeholder="ВАШ ПАРОЛЬ") }}
+                {{ register_form.register_email(placeholder="EMAIL") }}
+                {{ register_form.register_password(placeholder="ВАШ ПАРОЛЬ") }}
                 {{ register_form.confirm_password(placeholder="ПОВТОРИТЕ ПАРОЛЬ") }}
                 {{ register_form.registration_button(value="ЗАРЕГИСТРИРОВАТЬСЯ", class="red-button") }}
+                <div class="message">
+                    {% for errors in register_form.errors.items() %}
+                    
+                    <p>{{ errors[1][0] }}</p>
+     
+                    {% endfor %}
+                </div>
             </form>
+            
             <form class="login-form hidden" method="POST">
                 {{ login_form.hidden_tag() }}
-                {{ login_form.email(placeholder="EMAIL") }}
-                {{ login_form.password(placeholder="ВАШ ПАРОЛЬ") }}
+                {{ login_form.login_email(placeholder="EMAIL") }}
+                {{ login_form.login_password(placeholder="ВАШ ПАРОЛЬ") }}
 
                 <label class="checkbox style-b">
                     {{ login_form.remember_me() }}
@@ -35,8 +43,17 @@
 
 <!--                <input id="login-button" type="submit" value="ВОЙТИ" class="red-button">-->
                 {{ login_form.login_button(value="ВОЙТИ", class="red-button") }}
+                <div class="message">
+                    {% for errors in login_form.errors.items() %}
+                    
+                    <p>{{ errors[1][0] }}</p>
+                    
+                    {% endfor %}
+                </div>
+                
 
             </form>
+           
 
 
         </div>
@@ -44,4 +61,5 @@
 
 
 </main>
+<script src="../static/js/register.js"></script>
 {% endblock %}
