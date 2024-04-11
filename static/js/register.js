@@ -22,9 +22,10 @@ messageDiv.addEventListener('click', function (event){
     let target = event.target;
     console.log(target);
     target.classList.add("deleted");
-    
-
 });
+
+let test = document.querySelector("#username");
+console.log(test.message)
 
 
 
