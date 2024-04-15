@@ -3,6 +3,7 @@ import string
 from faker import Faker
 
 from flask import Flask, render_template, redirect, url_for
+from flask_login import login_required, logout_user
 from database_init import db
 from models.users import User
 from forms.register_form import RegistrationForm
@@ -25,6 +26,11 @@ def main():
     print('Database')
     app.run(port=5002, debug=True)
 
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect("/")
 
 @app.route('/')
 @app.route('/index')

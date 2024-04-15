@@ -2,8 +2,55 @@
 
 let personalDataP = document.querySelectorAll(".personal-data p");
 let editButton = document.querySelector(".personal-data .edit-button");
+let personalDataDiv = document.querySelectorAll(".personal-data>div");
+let personalDataInput = document.querySelectorAll('.personal-data input');
 editButton.addEventListener("click", function () {
-        
+    if (this.classList.contains("save-button")) {
+        this.classList.toggle("save-button");
+        let validBoolean = true;
+        personalDataDiv.forEach((div) => {
+
+            dataP = div.querySelector('p');
+            dataInput = div.querySelector('input');
+            // console.log(dataP.textContent);
+            if (!dataInput.checkValidity()) {
+                validBoolean = dataInput.checkValidity();
+            }
+            
+            console.log(validBoolean);
+            // if (dataInput.type == )
+            // console.log(dataInput.type);
+            dataP.textContent = dataInput.value;
+            dataInput.value = dataP.textContent;
+            dataP.classList.toggle('hidden');
+            dataInput.classList.toggle('hidden');
+            // console.log(dataInput, dataP);
+        })
+        // editButton.disabled = !validBoolean;
+        // console.log(editButton.disabled);
+        // if (!validBoolean) {
+        //     editButton.setAttribute('disabled');
+        // }
+        // else {
+        //     editButton.toggleAttribute('disabled');
+        // }
+        editButton.textContent = "РЕДАКТИРОВАТЬ";
+    } 
+    else {
+        this.classList.toggle("save-button");
+            personalDataDiv.forEach((div) => {
+
+                dataP = div.querySelector('p');
+                dataInput = div.querySelector('input');
+                // console.log(dataP.textContent);
+                dataInput.value = dataP.textContent;
+                dataP.classList.toggle('hidden');
+                dataInput.classList.toggle('hidden');
+                // console.log(dataInput, dataP);
+            })
+            editButton.textContent = "СОХРАНИТЬ ИЗМЕНЕНИЯ";
+    }
+            
 })
 
 

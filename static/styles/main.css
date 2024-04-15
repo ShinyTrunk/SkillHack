@@ -559,7 +559,12 @@ input:checked+.slider:before {
   /* margin-top: 5rem; */
   /* align-items: stretch; */
 }
-
+.save-button {
+  border-color: var(--white);
+}
+.save-button:hover {
+  border-color: var(--red);
+}
 .personal-data {
 
   background-color: var(--dark);
@@ -579,6 +584,8 @@ input:checked+.slider:before {
 
 .personal-data div {
   margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .personal-data span {
