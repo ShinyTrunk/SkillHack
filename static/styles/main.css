@@ -289,7 +289,8 @@ footer .logo {
 /* Ползунок */
 .slider {
 
-  border-radius: 15px;
+  border-radius: 1.5rem;
+  border-left: 4 px solid var(--white);
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -572,7 +573,7 @@ input:checked+.slider:before {
 }
 
 .personal-data img {
-  width: 25rem;
+  width: 20rem;
 
 }
 
@@ -582,7 +583,7 @@ input:checked+.slider:before {
 
 .personal-data span {
   /* color: var(--var5); */
-  color: var(--red);
+  color: var(--white-green);
 }
 
 .personal-data .edit-button {
@@ -618,8 +619,15 @@ input:checked+.slider:before {
 
   background-color: var(--var5);
   margin-bottom: 2.5rem;
+  border: 3px solid var(--var5);
+  transition: 0.5s;
 }
+.account-container .skill:hover {
 
+  border: 3px solid var(--white-green);
+  
+  background-color: var(--dark);
+}
 .account-container .skill:nth-child(1) .progress-inner{
   background-color:  var(--white-green);
 }
@@ -676,3 +684,4 @@ input:checked+.slider:before {
   text-align: right;
   
 }
+

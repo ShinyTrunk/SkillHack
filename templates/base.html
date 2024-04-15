@@ -13,26 +13,26 @@
 <body>
   <header>
       <div class="header-container container">
-          <a href="#" class="logo">SKILLHACK</a>
+          <a href="{{url_for('index')}}" class="logo">SKILLHACK</a>
           <nav>
               <a href="#">навыки</a>
               <a href="#">о нас</a>
               <a href="#">обратная связь</a>
-              <a href="/sign-in-sign-up">вход</a>
-              <a href="/sign-in-sign-up">регистрация</a>
+              <!-- <a href="/sign-in-sign-up">вход</a> -->
+              <a href="{{url_for('login_page')}}">регистрация и вход</a>
           </nav>
       </div>
   </header>
   {% block content %}{% endblock %}
   <footer>
     <div class="header-container">
-        <a href="#" class="logo">SKILLHACK</a>
+        <a href="{{url_for('index')}}" class="logo">SKILLHACK</a>
         <nav class="footer-nav">
             <a href="#">навыки</a>
             <a href="#">о нас</a>
             <a href="#">обратная связь</a>
-            <a href="#">вход</a>
-            <a href="#">регистрация</a>
+            <!-- <a href="#">вход</a> -->
+            <a href="{{url_for('login_page')}}">регистрация и вход</a>
         </nav>
         <div>
             <a href="">социальные сети</a>

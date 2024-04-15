@@ -2,7 +2,9 @@
 
 let personalDataP = document.querySelectorAll(".personal-data p");
 let editButton = document.querySelector(".personal-data .edit-button");
-
+editButton.addEventListener("click", function () {
+        
+})
 
 
 // прогресс 
