@@ -554,6 +554,7 @@ input:checked+.slider:before {
   padding: 1rem 2rem;
   display: flex;
   height: 90%;
+  align-items: center;
   justify-content: space-around;
   margin: 2rem auto;
   /* margin-top: 5rem; */
@@ -566,6 +567,7 @@ input:checked+.slider:before {
   border-color: var(--red);
 }
 .personal-data {
+  height: 70%;
 
   background-color: var(--dark);
   display: flex;

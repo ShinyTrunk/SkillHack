@@ -16,7 +16,7 @@ editButton.addEventListener("click", function () {
             if (!dataInput.checkValidity()) {
                 validBoolean = dataInput.checkValidity();
             }
-            
+
             console.log(validBoolean);
             // if (dataInput.type == )
             // console.log(dataInput.type);
@@ -26,6 +26,10 @@ editButton.addEventListener("click", function () {
             dataInput.classList.toggle('hidden');
             // console.log(dataInput, dataP);
         })
+        let inputPas = document.querySelector("input #pas");
+        let inputTwicePas = document.querySelector("input #twice-pas");
+        inputPas.classList.toggle('hidden');
+        inputTwicePas.classList.toggle('hidden');
         // editButton.disabled = !validBoolean;
         // console.log(editButton.disabled);
         // if (!validBoolean) {
@@ -35,22 +39,26 @@ editButton.addEventListener("click", function () {
         //     editButton.toggleAttribute('disabled');
         // }
         editButton.textContent = "РЕДАКТИРОВАТЬ";
-    } 
+    }
     else {
         this.classList.toggle("save-button");
-            personalDataDiv.forEach((div) => {
+        personalDataDiv.forEach((div) => {
 
-                dataP = div.querySelector('p');
-                dataInput = div.querySelector('input');
-                // console.log(dataP.textContent);
-                dataInput.value = dataP.textContent;
-                dataP.classList.toggle('hidden');
-                dataInput.classList.toggle('hidden');
-                // console.log(dataInput, dataP);
-            })
-            editButton.textContent = "СОХРАНИТЬ ИЗМЕНЕНИЯ";
+            dataP = div.querySelector('p');
+            dataInput = div.querySelector('input');
+            // console.log(dataP.textContent);
+            dataInput.value = dataP.textContent;
+            dataP.classList.toggle('hidden');
+            dataInput.classList.toggle('hidden');
+            // console.log(dataInput, dataP);
+        })
+        let inputPas = document.querySelector("input #pas");
+        let inputTwicePas = document.querySelector("input #twice-pas");
+        inputPas.classList.toggle('hidden');
+        inputTwicePas.classList.toggle('hidden');
+        editButton.textContent = "СОХРАНИТЬ ИЗМЕНЕНИЯ";
     }
-            
+
 })
 
 
@@ -68,15 +76,15 @@ inners.forEach((inner) => {
     let timerId = setInterval(() => {
         start = start + diff;
         inner.style.width = start + "%";
-        
+
 
         progressText.textContent = start.toFixed(1) + "%";
         inner.appendChild(progressText);
-        
+
     }, 10);
-    
-   
+
+
 
     setTimeout(() => { clearInterval(timerId); }, 1000);
-    
+
 })
