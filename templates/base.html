@@ -14,13 +14,22 @@
   <header>
       <div class="header-container container">
           <a href="{{url_for('index')}}" class="logo">SKILLHACK</a>
+          {% if current_user.is_authenticated %}
           <nav>
               <a href="#">навыки</a>
               <a href="#">о нас</a>
               <a href="#">обратная связь</a>
-              <!-- <a href="/sign-in-sign-up">вход</a> -->
-              <a href="{{url_for('login_page')}}">регистрация и вход</a>
+              <a href="{{ url_for('profile_page') }}">профиль</a>
           </nav>
+          {% else %}
+          <nav>
+              <a href="#">навыки</a>
+              <a href="#">о нас</a>
+              <a href="#">обратная связь</a>
+              <a href="{{ url_for('login_page') }}">регистрация и вход</a>
+          </nav>
+          {% endif %}
+
       </div>
   </header>
   {% block content %}{% endblock %}

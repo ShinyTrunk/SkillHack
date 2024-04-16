@@ -1,5 +1,7 @@
 import os
 import string
+
+import wtforms
 from faker import Faker
 
 from flask import Flask, render_template, redirect, url_for
@@ -7,6 +9,7 @@ from database_init import db
 from models.users import User
 from forms.register_form import RegistrationForm
 from forms.login_form import LoginForm
+from flask_login import LoginManager, login_user, login_required, logout_user
 
 fake = Faker()
 
@@ -16,6 +19,8 @@ file_path = f'{os.path.abspath(os.getcwd())}\\db\\main.db'
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + file_path
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
+login_manager = LoginManager()
+login_manager.init_app(app)
 
 
 def main():
@@ -24,6 +29,17 @@ def main():
     db.create_all()
     print('Database')
     app.run(port=5002, debug=True)
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return db.session.query(User).get(user_id)
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect("/")
 
 
 @app.route('/')
@@ -50,23 +66,24 @@ def login_page():
     register_form = RegistrationForm()
     login_form = LoginForm()
     params = {'register_form': register_form, 'login_form': login_form}
-    if register_form.validate_on_submit() and register_form.registration_button.data:
+    if register_form.validate_on_submit():
         print('register')
         user = User(username=register_form.username.data, email=register_form.register_email.data)
         user.set_password(register_form.register_password.data)
         db.session.add(user)
         db.session.commit()
-        return redirect(url_for('profile_page'))
-    if login_form.validate_on_submit() and login_form.login_button.data:
+        login_user(user)
+        params = {'title': 'Профиль'}
+        return redirect(url_for('profile_page', **params))
+    if login_form.validate_on_submit():
         print('login')
-        current_user_email = (login_form.login_email.data, )
-        users_email = db.session.query(User.email).all()
-        # print((login_form.login_email.data, ), users_email[current_user_email])
-        if (login_form.login_email.data, ) in users_email:
-            print('YEAAAA')
-            if login_form.login_password.data == users_email.password:
-                print('good pass')
-        return redirect(url_for('profile_page'))
+        user = db.session.query(User).filter(User.email == login_form.login_email.data).first()
+        if user and user.check_password(login_form.login_password.data):
+            login_user(user, remember=login_form.remember_me.data)
+            params = {'title': 'Профиль'}
+            return redirect(url_for('profile_page', **params))
+        params = {'register_form': register_form, 'login_form': login_form, 'message': "Неправильный логин или пароль"}
+        return render_template('register.html', **params)
     return render_template('register.html', **params)
 
 

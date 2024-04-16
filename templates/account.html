@@ -7,17 +7,18 @@
             <img src="../static/img/avatar.png" alt="">
             <div>
                 <span>ИМЯ ПОЛЬЗОВАТЕЛЯ</span>
-                <p>RWERRX</p>
+                <p>{{ current_user.username }}</p>
             </div>
             <div>
                 <span>EMAIL</span>
-                <p>qwe@gamail.com</p>
+                <p>{{ current_user.email }}</p>
             </div>
             <div>
                 <span>ПАРОЛЬ</span>
                 <p>............</p>
             </div>
             <a class="red-button edit-button">РЕДАКТИРОВАТЬ</a>
+            <a href="{{ url_for('logout') }}" class="red-button edit-button">ВЫЙТИ</a>
 
         </section>
         <section class="account-skills">
