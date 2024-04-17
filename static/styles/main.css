@@ -614,6 +614,9 @@ input:checked+.slider:before {
     
 }
 .account-container .skill {
+  display: block;
+  color: var(--white);
+
   font-size: 1.5rem;
   padding: 1rem 1rem; 
 
@@ -629,7 +632,7 @@ input:checked+.slider:before {
   background-color: var(--dark);
 }
 .account-container .skill:nth-child(1) .progress-inner{
-  background-color:  var(--white-green);
+  background-color:  var(--white-green) !important;
 }
 
 .account-container .skill:nth-child(2) .progress-inner{

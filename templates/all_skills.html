@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+    <a href="{{ url_for('skill_page', skill_name='python') }}">PYTHON</a>
+    <a href="{{ url_for('skill_page', skill_name='java') }}">JAVA</a>
+    <a href="{{ url_for('skill_page', skill_name='html') }}">HTML</a>
+</main>
+
+{% endblock %}

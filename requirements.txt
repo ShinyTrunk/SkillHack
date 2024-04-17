@@ -1,0 +1,8 @@
+Faker==24.4.0
+Flask==3.0.3
+Flask_Login==0.6.3
+flask_sqlalchemy==3.1.1
+flask_wtf==1.2.1
+SQLAlchemy==2.0.28
+Werkzeug==3.0.2
+WTForms==3.1.2

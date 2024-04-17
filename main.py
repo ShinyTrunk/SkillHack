@@ -33,7 +33,8 @@ def main():
 
 @login_manager.user_loader
 def load_user(user_id):
-    return db.session.query(User).get(user_id)
+    return db.session.get(User, user_id)
+
 
 @app.route('/logout')
 @login_required
@@ -48,24 +49,27 @@ def index():
     # user = User(username=fake.name(), hashed_password=fake.postcode(), email=fake.ascii_free_email())
     # db.session.add(user)
     # db.session.commit()
-    return render_template('index.html')
+    params = {"title": "ГЛАВНАЯ"}
+    return render_template('index.html', **params)
 
 
-@app.route('/skills')
-def skills_page():
-    return "<h1>Skills</h1>"
+@app.route('/all-skills')
+def all_skills_page():
+    params = {"title": "Навыки"}
+    return render_template('all_skills.html', **params)
 
 
 @app.route('/skill/<skill_name>')
 def skill_page(skill_name):
-    params = {'title': f'Навык {skill_name}', 'skill_name': skill_name}
+    params = {'title': f'Навык {skill_name.capitalize()}', 'skill_name': skill_name}
+    return render_template('skill.html', **params)
 
 
 @app.route('/sign-in-sign-up', methods=['GET', 'POST'])
 def login_page():
     register_form = RegistrationForm()
     login_form = LoginForm()
-    params = {'register_form': register_form, 'login_form': login_form}
+    params = {'register_form': register_form, 'login_form': login_form, "title": "Регистрация/Авторизация"}
     if register_form.validate_on_submit():
         print('register')
         user = User(username=register_form.username.data, email=register_form.register_email.data)
@@ -82,7 +86,8 @@ def login_page():
             login_user(user, remember=login_form.remember_me.data)
             params = {'title': 'Профиль'}
             return redirect(url_for('profile_page', **params))
-        params = {'register_form': register_form, 'login_form': login_form, 'message': "Неправильный логин или пароль"}
+        params = {'register_form': register_form, 'login_form': login_form, 'message': "Неправильный логин или пароль",
+                  "title": "Регистрация/Авторизация"}
         return render_template('register.html', **params)
     return render_template('register.html', **params)
 
@@ -94,7 +99,8 @@ def about_us_page():
 
 @app.route('/profile')
 def profile_page():
-    return render_template('account.html')
+    params = {'title': "Профиль"}
+    return render_template('account.html', **params)
 
 
 if __name__ == '__main__':
