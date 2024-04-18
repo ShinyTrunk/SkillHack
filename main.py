@@ -24,7 +24,7 @@ def main():
     app.app_context().push()
     db.create_all()
     print('Database')
-    app.run(port=5002, debug=True)
+    app.run(port=5000, debug=True)
 
 @app.route('/logout')
 @login_required

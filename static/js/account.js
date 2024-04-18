@@ -1,65 +1,52 @@
 // редактирование личных данных в аккаунте, надо <p> заменять на <input>, <a> на <submit>
 
-let personalDataP = document.querySelectorAll(".personal-data p");
+// let personalDataP = document.querySelectorAll(".personal-data p");
 let editButton = document.querySelector(".personal-data .edit-button");
 let personalDataDiv = document.querySelectorAll(".personal-data>div");
-let personalDataInput = document.querySelectorAll('.personal-data input');
 editButton.addEventListener("click", function () {
-    if (this.classList.contains("save-button")) {
-        this.classList.toggle("save-button");
-        let validBoolean = true;
-        personalDataDiv.forEach((div) => {
+    
+    let personalName = document.querySelector(".personal-data div:nth-child(2)");
+    let personalPas = document.querySelectorAll(".personal-data div:nth-child(n + 4)");
+    if (this.classList.contains("edit-button")) {
+        let pName = personalName.querySelector("p");
+        let inputName = personalName.querySelector("input");
+        pName.textContent = inputName.value;
+        pName.classList.toggle("hidden");
+        inputName.classList.toggle("hidden");
+        personalPas.forEach((div) => {
+            pasInput = div.querySelector("input");
+            pasSpan = div.querySelector("span");
+            pasInput.classList.toggle("hidden");
+            pasSpan.classList.toggle("hidden");
 
-            dataP = div.querySelector('p');
-            dataInput = div.querySelector('input');
-            // console.log(dataP.textContent);
-            if (!dataInput.checkValidity()) {
-                validBoolean = dataInput.checkValidity();
-            }
-
-            console.log(validBoolean);
-            // if (dataInput.type == )
-            // console.log(dataInput.type);
-            dataP.textContent = dataInput.value;
-            dataInput.value = dataP.textContent;
-            dataP.classList.toggle('hidden');
-            dataInput.classList.toggle('hidden');
-            // console.log(dataInput, dataP);
-        })
-        let inputPas = document.querySelector("input #pas");
-        let inputTwicePas = document.querySelector("input #twice-pas");
-        inputPas.classList.toggle('hidden');
-        inputTwicePas.classList.toggle('hidden');
-        // editButton.disabled = !validBoolean;
-        // console.log(editButton.disabled);
-        // if (!validBoolean) {
-        //     editButton.setAttribute('disabled');
-        // }
-        // else {
-        //     editButton.toggleAttribute('disabled');
-        // }
+        });
         editButton.textContent = "РЕДАКТИРОВАТЬ";
     }
     else {
-        this.classList.toggle("save-button");
-        personalDataDiv.forEach((div) => {
+        // let personalDataDiv = document.querySelectorAll(".personal-data>div ");
+        let personalName = document.querySelector(".personal-data div:nth-child(2)");
+        let personalPas = document.querySelectorAll(".personal-data div:nth-child(n + 4)");
+        if (this.classList.contains("save-button")) {
+            let pName = personalName.querySelector("p");
+            let inputName = personalName.querySelector("input");
+            inputName.value = pName.textContent;
+            pName.classList.toggle("hidden");
+            inputName.classList.toggle("hidden");
+            personalPas.forEach((div) => {
+                pasInput = div.querySelector("input");
+                pasSpan = div.querySelector("span");
+                pasInput.classList.toggle("hidden");
+                pasSpan.classList.toggle("hidden");
 
-            dataP = div.querySelector('p');
-            dataInput = div.querySelector('input');
-            // console.log(dataP.textContent);
-            dataInput.value = dataP.textContent;
-            dataP.classList.toggle('hidden');
-            dataInput.classList.toggle('hidden');
-            // console.log(dataInput, dataP);
-        })
-        let inputPas = document.querySelector("input #pas");
-        let inputTwicePas = document.querySelector("input #twice-pas");
-        inputPas.classList.toggle('hidden');
-        inputTwicePas.classList.toggle('hidden');
-        editButton.textContent = "СОХРАНИТЬ ИЗМЕНЕНИЯ";
+            });
+            editButton.textContent = "СОХРАНИТЬ ИЗМЕНЕНИЯ";
+        }
     }
+});
 
-})
+
+
+    
 
 
 // прогресс 
