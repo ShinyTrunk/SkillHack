@@ -1,10 +1,11 @@
+import json
 import os
 import string
 
 import wtforms
 from faker import Faker
 
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template, redirect, url_for, request
 from database_init import db
 from models.users import User
 from forms.register_form import RegistrationForm
@@ -43,12 +44,38 @@ def logout():
     return redirect("/")
 
 
+@app.route('/validate_profile', methods=['POST'])
+def validate_profile():
+    username = request.json['username']
+    password = request.json['password']
+    confirm_password = request.json['confirm_password']
+    if username and 3 <= len(username) <= 20 and password and 8 <= len(password) <= 30 and password == confirm_password:
+        response = {'status': 'success'}
+        return json.dumps(response)
+    else:
+        response = {'status': 'error', 'messages': []}
+        if not username:
+            response['messages'].append('Не заполнено поле никнейма')
+            # return json.dumps({'status': 'error', 'message': ['Не заполнено поле никнейма']})
+        else:
+            if not 3 <= len(username) <= 20:
+                response['messages'].append('Длина никнейма должна быть не меньше 3 и не больше 20 символов')
+                # return json.dumps(
+                #     {'status': 'error', 'message': ['Длина никнейма должна быть больше 3 и меньше 20 символов']})
+        if not password:
+            response['messages'].append('Не заполнено поле пароля')
+            # return json.dumps({'status': 'error', 'message': ['Не заполнено поле никнейма']})
+        else:
+            if not 8 <= len(password) <= 30:
+                response['messages'].append('Длина пароля должна быть не меньше 8 и не больше 30 символов')
+            if password != confirm_password:
+                response['messages'].append('Пароли должны совпадать')
+        return json.dumps(response)
+
+
 @app.route('/')
 @app.route('/index')
 def index():
-    # user = User(username=fake.name(), hashed_password=fake.postcode(), email=fake.ascii_free_email())
-    # db.session.add(user)
-    # db.session.commit()
     params = {"title": "ГЛАВНАЯ"}
     return render_template('index.html', **params)
 

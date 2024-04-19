@@ -1,7 +1,4 @@
-from sqlalchemy import orm
-
 from database_init import db
-from werkzeug.security import generate_password_hash, check_password_hash
 
 
 class Skill(db.Model):

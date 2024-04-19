@@ -1,5 +1,3 @@
-from flask_login import UserMixin
-
 from .skills import Skill
 from database_init import db
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -12,7 +10,7 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     username = db.Column(db.String, unique=True, nullable=False)
     email = db.Column(db.String, unique=True, nullable=False)
-    hashed_password = db.Column(db.String , nullable=False)
+    hashed_password = db.Column(db.String, nullable=False)
     skills = db.relationship("Skill", backref='user', lazy=True)
 
     def set_password(self, password):
