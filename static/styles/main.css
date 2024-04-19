@@ -96,6 +96,7 @@ nav a:hover {
 footer {
   background-color: var(--dark);
   height: 10%;
+  margin-top: 1rem;
 }
 footer .logo {
   font-size: calc(var(--one-wh) * 0.8);
@@ -556,9 +557,9 @@ input:checked+.slider:before {
 
 .account-container {
   max-width: 120rem;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   display: flex;
-  height: 90%;
+  height: auto;
   align-items: center;
   justify-content: space-around;
   margin: 2rem auto;
@@ -579,7 +580,7 @@ input:checked+.slider:before {
   justify-content: center;
   color: var(--white);
   flex-direction: column;
-  padding: 2rem 3rem;
+  padding: 1rem 2rem;
   border: 3px solid var(--white-green);
   font-size: 1.4rem;
 }
@@ -590,11 +591,15 @@ input:checked+.slider:before {
 }
 
 .personal-data div {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
 }
-
+.personal-data input {
+  background-color: var(--white);
+  outline: none;
+  border: none;
+}
 .personal-data span {
   /* color: var(--var5); */
   color: var(--white-green);
@@ -709,6 +714,6 @@ input:checked+.slider:before {
 /* .personal-data div:nth-child(n + 4) {
   color: red;
 } */
-.personal-form  div:nth-child(1) {
+/* .personal-form  div:nth-child(1) {
   color:red;
-}
+} */

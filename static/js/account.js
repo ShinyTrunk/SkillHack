@@ -4,10 +4,32 @@
 let editButton = document.querySelector(".personal-data .edit-button");
 let personalDataDiv = document.querySelectorAll(".personal-form div");
 editButton.addEventListener("click", function () {
-    
+    let username = document.querySelector("#username");
+    let password = document.querySelector("#password");
+    let conPassword = document.querySelector("#confirm-passwor");
+
+    let form = document.querySelector(".personal-form");
+    let json = JSON.stringify({
+        username: username.value,
+        password: password.value,
+        confirm_password: conPassword.value
+    });
+
+    console.log(formData)
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "/validate_profile", false);
+    xhr.send(json);
+    // xhr.onload = function () {
+    //     if (xhr.status == "error") {
+            
+    //     }
+    // }
+
+
+
     let personalName = document.querySelector(".personal-form  div:nth-child(1)");
     let personalPas = document.querySelectorAll(".personal-form div:nth-child(n + 3)");
-    if (this.classList.contains("edit-button")) {
+    if (this.classList.contains("save-button")) {
         // console.log(personalName.querySelector("input"))
         let pName = personalName.querySelector("p");
         let inputName = personalName.querySelector("input");
@@ -24,29 +46,33 @@ editButton.addEventListener("click", function () {
         editButton.textContent = "РЕДАКТИРОВАТЬ";
     }
     else {
-        let personalName = document.querySelector(".personal-form div:nth-child(2)");
-        let personalPas = document.querySelectorAll(".personal-form div:nth-child(n + 4)");
-        if (this.classList.contains("save-button")) {
-            let pName = personalName.querySelector("p");
-            let inputName = personalName.querySelector("input");
-            inputName.value = pName.textContent;
-            pName.classList.toggle("hidden");
-            inputName.classList.toggle("hidden");
-            personalPas.forEach((div) => {
-                pasInput = div.querySelector("input");
-                pasSpan = div.querySelector("span");
-                pasInput.classList.toggle("hidden");
-                pasSpan.classList.toggle("hidden");
 
-            });
-            editButton.textContent = "СОХРАНИТЬ ИЗМЕНЕНИЯ";
-        }
+
+        let personalName = document.querySelector(".personal-form div:nth-child(1)");
+        let personalPas = document.querySelectorAll(".personal-form div:nth-child(n + 3)");
+
+        let pName = personalName.querySelector("p");
+        let inputName = personalName.querySelector("input");
+        inputName.value = pName.textContent;
+        pName.classList.toggle("hidden");
+        inputName.classList.toggle("hidden");
+        personalPas.forEach((div) => {
+            pasInput = div.querySelector("input");
+            pasSpan = div.querySelector("span");
+            pasInput.classList.toggle("hidden");
+            pasSpan.classList.toggle("hidden");
+
+        });
+
+        editButton.textContent = "СОХРАНИТЬ ИЗМЕНЕНИЯ";
+        editButton.classList.toggle("save-button");
     }
-});
+}
+);
 
 
 
-    
+
 
 
 // прогресс 
