@@ -2,12 +2,13 @@
 
 // let personalDataP = document.querySelectorAll(".personal-data p");
 let editButton = document.querySelector(".personal-data .edit-button");
-let personalDataDiv = document.querySelectorAll(".personal-data>div");
+let personalDataDiv = document.querySelectorAll(".personal-form div");
 editButton.addEventListener("click", function () {
     
-    let personalName = document.querySelector(".personal-data div:nth-child(2)");
-    let personalPas = document.querySelectorAll(".personal-data div:nth-child(n + 4)");
+    let personalName = document.querySelector(".personal-form  div:nth-child(1)");
+    let personalPas = document.querySelectorAll(".personal-form div:nth-child(n + 3)");
     if (this.classList.contains("edit-button")) {
+        // console.log(personalName.querySelector("input"))
         let pName = personalName.querySelector("p");
         let inputName = personalName.querySelector("input");
         pName.textContent = inputName.value;
@@ -23,9 +24,8 @@ editButton.addEventListener("click", function () {
         editButton.textContent = "РЕДАКТИРОВАТЬ";
     }
     else {
-        // let personalDataDiv = document.querySelectorAll(".personal-data>div ");
-        let personalName = document.querySelector(".personal-data div:nth-child(2)");
-        let personalPas = document.querySelectorAll(".personal-data div:nth-child(n + 4)");
+        let personalName = document.querySelector(".personal-form div:nth-child(2)");
+        let personalPas = document.querySelectorAll(".personal-form div:nth-child(n + 4)");
         if (this.classList.contains("save-button")) {
             let pName = personalName.querySelector("p");
             let inputName = personalName.querySelector("input");
