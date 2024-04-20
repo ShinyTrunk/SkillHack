@@ -70,6 +70,7 @@ def validate_profile():
                 response['messages'].append('Длина пароля должна быть не меньше 8 и не больше 30 символов')
             if password != confirm_password:
                 response['messages'].append('Пароли должны совпадать')
+        print(response)
         return json.dumps(response)
 
 
