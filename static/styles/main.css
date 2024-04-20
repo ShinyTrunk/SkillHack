@@ -347,7 +347,7 @@ input:checked+.slider:before {
 
 
 
-/* 
+/*
 .authorization-toggler span:hover {
   color: var(--white-blue);
   border-color: var(--white);
@@ -494,7 +494,7 @@ input:checked+.slider:before {
   animation-fill-mode: forwards !important;
   animation-name: delete-p !important;
   animation-duration: 0.4s !important;
-  
+
 }
 .message {
   position: fixed;
@@ -525,10 +525,10 @@ input:checked+.slider:before {
   animation-duration: 1s;
   animation-timing-function: ease-out;
   /* transition-delay: 2s; */
-} 
+}
 .message>p:hover {
   opacity: 0.5;
-  
+
 }
 
 @media screen and (max-width: 1100px) {
@@ -630,14 +630,11 @@ input:checked+.slider:before {
     /* border: 3px solid var(--white-green); */
     /* margin-left: 3rem; */
 
-    
+
 }
 .account-container .skill {
-  display: block;
-  color: var(--white);
-
   font-size: 1.5rem;
-  padding: 1rem 1rem; 
+  padding: 1rem 1rem;
 
   background-color: var(--var5);
   margin-bottom: 2.5rem;
@@ -647,11 +644,11 @@ input:checked+.slider:before {
 .account-container .skill:hover {
 
   border: 3px solid var(--white-green);
-  
+
   background-color: var(--dark);
 }
 .account-container .skill:nth-child(1) .progress-inner{
-  background-color:  var(--white-green) !important;
+  background-color:  var(--white-green);
 }
 
 .account-container .skill:nth-child(2) .progress-inner{
@@ -666,7 +663,7 @@ input:checked+.slider:before {
   font-family: "Press Start 2P Regular";
 }
 
-/* прогресс */  
+/* прогресс */
 
 .account-skills .progress-other {
   background-color: var(--dark);
@@ -680,7 +677,7 @@ input:checked+.slider:before {
   /* border-radius: 2rem; */
 
 }
-/* 
+/*
 .account-container .account-skills>div:nth-child(1) .progress-other{
   border: 3px solid var(--white-green);
 }
@@ -704,7 +701,7 @@ input:checked+.slider:before {
   font-weight: bold;
   padding: 0.2rem;
   text-align: right;
-  
+
 }
 
 /* .personal-data>div:not(:nth-child(2)) {

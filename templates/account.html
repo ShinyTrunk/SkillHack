@@ -1,65 +1,56 @@
 {% extends "base.html" %}
 
 {% block content %}
-<main>
-    <div class="account-container">
-        <section class="personal-data">
-            <img src="../static/img/avatar.png" alt="">
-            <form class="personal-form">
-                <div>
-                    <span>ИМЯ ПОЛЬЗОВАТЕЛЯ</span>
-                    <input type="text" value="" class="hidden" name="username" id="username">
-                    <p>RWERRX</p>
-                </div>
-                <div>
-                    <span>EMAIL</span>
-                    <p>qwe@gamail.com</p>
-                </div>
-                <div>
-                    <span class="hidden">ПАРОЛЬ</span>
-                    <input type="password" class="hidden" name="password" id="password">
-                </div>
-                <div>
-                    <span class="hidden">ПОВТОPИТЕ ПАРОЛЬ</span>
-                    <input type="password" class="hidden" name="confirm_password" id="confirm-password">
-                </div>
-            </form>
-
-            <!-- <div>
-                
-                <input type="password" value="" id="pas" class="hidden" min=8 max=30>
-                <input type="password" value="" id="twice-pas" class="hidden" min=8 max=30>
-                
-            </div> -->
-            <a class="red-button edit-button">РЕДАКТИРОВАТЬ</a>
-
-        </section>
-        <section class="account-skills">
-            <div class="skill">
-                <p>PYTHON</p>
-                <div class="progress-other">
-                    <div class="progress-inner" data-percent="10"></div>
-                </div>
-            </div>
-            <div class="skill">
-                <p>JAVA</p>
-                <div class="progress-other">
-                    <div class="progress-inner" data-percent="45"></div>
-                </div>
-            </div>
-            <div class="skill">
-                <p>HTML</p>
-                <div class="progress-other">
-                    <div class="progress-inner" data-percent="90.7"></div>
-                </div>
-            </div>
+    <main>
+        <div class="account-container">
+            <section class="personal-data">
+                <img src="../static/img/avatar.png" alt="">
+                <form class="personal-form">
+                    <div>
+                        <span>ИМЯ ПОЛЬЗОВАТЕЛЯ</span>
+                        <input type="text" value="" class="hidden" name="username" id="username">
+                        <p>{{ current_user.username }}</p>
+                    </div>
+                    <div>
+                        <span>EMAIL</span>
+                        <p>{{ current_user.email }}</p>
+                    </div>
+                    <div>
+                        <span class="hidden">ПАРОЛЬ</span>
+                        <input type="password" class="hidden" name="password" id="password">
+                    </div>
+                    <div>
+                        <span class="hidden">ПОВТОPИТЕ ПАРОЛЬ</span>
+                        <input type="password" class="hidden" name="confirm_password" id="confirm-password">
+                    </div>
+                </form>
+                <a class="red-button edit-button">РЕДАКТИРОВАТЬ</a>
+                <a href="{{ url_for('logout') }}" class="red-button edit-button">ВЫЙТИ</a>
+            </section>
+            <section class="account-skills">
+                <a class="skill" href="{{ url_for('skill_page', skill_name='python') }}">
+                    <p>PYTHON</p>
+                    <div class="progress-other">
+                        <div class="progress-inner" data-percent="10"></div>
+                    </div>
+                </a>
+                <a class="skill" href="{{ url_for('skill_page', skill_name='java') }}">
+                    <p>JAVA</p>
+                    <div class="progress-other">
+                        <div class="progress-inner" data-percent="45"></div>
+                    </div>
+                </a>
+                <a class="skill" href="{{ url_for('skill_page', skill_name='html') }}">
+                    <p>HTML</p>
+                    <div class="progress-other">
+                        <div class="progress-inner" data-percent="90.7"></div>
+                    </div>
+                </a>
+            </section>
 
 
-        </section>
-
-
-    </div>
-</main>
-<script src="../static/js/account.js"></script>
+        </div>
+    </main>
+    <script src="../static/js/account.js"></script>
 
 {% endblock %}

@@ -1,12 +1,12 @@
 // редактирование личных данных в аккаунте, надо <p> заменять на <input>, <a> на <submit>
-
 // let personalDataP = document.querySelectorAll(".personal-data p");
 let editButton = document.querySelector(".personal-data .edit-button");
 let personalDataDiv = document.querySelectorAll(".personal-form div");
 editButton.addEventListener("click", function () {
+    console.log(1);
     let username = document.querySelector("#username");
     let password = document.querySelector("#password");
-    let conPassword = document.querySelector("#confirm-passwor");
+    let conPassword = document.querySelector("#confirm-password");
 
     let form = document.querySelector(".personal-form");
     let json = JSON.stringify({
@@ -15,13 +15,14 @@ editButton.addEventListener("click", function () {
         confirm_password: conPassword.value
     });
 
-    console.log(formData)
+    // console.log(formData)
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "/validate_profile", false);
+    xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
     xhr.send(json);
     // xhr.onload = function () {
     //     if (xhr.status == "error") {
-            
+
     //     }
     // }
 
@@ -41,7 +42,6 @@ editButton.addEventListener("click", function () {
             pasSpan = div.querySelector("span");
             pasInput.classList.toggle("hidden");
             pasSpan.classList.toggle("hidden");
-
         });
         editButton.textContent = "РЕДАКТИРОВАТЬ";
     }
@@ -75,10 +75,8 @@ editButton.addEventListener("click", function () {
 
 
 
-// прогресс 
-
+// прогресс
 let inners = document.querySelectorAll(".progress-inner");
-
 inners.forEach((inner) => {
     let percent = parseFloat(inner.dataset.percent);
     // inner.removeChild("p");
@@ -89,15 +87,8 @@ inners.forEach((inner) => {
     let timerId = setInterval(() => {
         start = start + diff;
         inner.style.width = start + "%";
-
-
         progressText.textContent = start.toFixed(1) + "%";
         inner.appendChild(progressText);
-
     }, 10);
-
-
-
     setTimeout(() => { clearInterval(timerId); }, 1000);
-
 })

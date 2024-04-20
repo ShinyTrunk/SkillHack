@@ -11,39 +11,46 @@
 </head>
 
 <body>
-  <header>
-      <div class="header-container container">
-          <a href="{{url_for('index')}}" class="logo">SKILLHACK</a>
-          <nav>
-              <a href="#">навыки</a>
-              <a href="#">о нас</a>
-              <a href="#">обратная связь</a>
-              <!-- <a href="/sign-in-sign-up">вход</a> -->
-
-
-              <a href="{{url_for('login_page')}}">регистрация и вход</a>
-
-
-          </nav>
-      </div>
-  </header>
-  {% block content %}{% endblock %}
-  <footer>
+<header>
+    <div class="header-container container">
+        <a href="{{ url_for('index') }}" class="logo">SKILLHACK</a>
+        {% if current_user.is_authenticated %}
+            <nav>
+                <a href="{{ url_for('all_skills_page') }}">навыки</a>
+                <a href="#">о нас</a>
+                <a href="#">обратная связь</a>
+                <a href="{{ url_for('profile_page') }}">профиль</a>
+            </nav>
+        {% else %}
+            <nav>
+                <a href="{{ url_for('login_page') }}">навыки</a>
+                <a href="#">о нас</a>
+                <a href="#">обратная связь</a>
+                <a href="{{ url_for('login_page') }}">регистрация и вход</a>
+            </nav>
+        {% endif %}
+    </div>
+</header>
+{% block content %}{% endblock %}
+<footer>
     <div class="header-container">
-        <a href="{{url_for('index')}}" class="logo">SKILLHACK</a>
+        <a href="{{ url_for('index') }}" class="logo">SKILLHACK</a>
         <nav class="footer-nav">
             <a href="#">навыки</a>
             <a href="#">о нас</a>
             <a href="#">обратная связь</a>
-            <!-- <a href="#">вход</a> -->
-            <a href="{{url_for('login_page')}}">регистрация и вход</a>
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('profile_page') }}">профиль</a>
+            {% else %}
+                <a href="{{ url_for('login_page') }}">регистрация и вход</a>
+            {% endif %}
         </nav>
         <div>
             <a href="">социальные сети</a>
         </div>
     </div>
-    
-    
+
+
 </footer>
 
 
