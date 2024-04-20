@@ -7,29 +7,24 @@
     <link rel="stylesheet" href="../static/styles/root.css"/>
     <link rel="stylesheet" href="../static/styles/fonts.css"/>
     <link rel="stylesheet" href="../static/styles/main.css"/>
-    <title>{{ title }}</title>
+    <!-- <title>Главная</title> -->
 </head>
 
 <body>
   <header>
       <div class="header-container container">
           <a href="{{url_for('index')}}" class="logo">SKILLHACK</a>
-          {% if current_user.is_authenticated %}
           <nav>
-              <a href="{{ url_for('all_skills_page') }}">навыки</a>
+              <a href="#">навыки</a>
               <a href="#">о нас</a>
               <a href="#">обратная связь</a>
-              <a href="{{ url_for('profile_page') }}">профиль</a>
-          </nav>
-          {% else %}
-          <nav>
-              <a href="{{ url_for('login_page') }}">навыки</a>
-              <a href="#">о нас</a>
-              <a href="#">обратная связь</a>
-              <a href="{{ url_for('login_page') }}">регистрация и вход</a>
-          </nav>
-          {% endif %}
+              <!-- <a href="/sign-in-sign-up">вход</a> -->
 
+
+              <a href="{{url_for('login_page')}}">регистрация и вход</a>
+
+
+          </nav>
       </div>
   </header>
   {% block content %}{% endblock %}
