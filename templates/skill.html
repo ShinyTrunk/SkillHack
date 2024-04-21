@@ -2,7 +2,74 @@
 
 {% block content %}
 <main>
-    <h1 style="color: white">{{ skill_name }}</h1>
-</main>
+    <div class="skill-wrapper">
+        <div class="header-skill">
+            <h1>{{ skill_name }}</h1>
+    
+            <div class="progress-other">
+    
+                <div class="progress-inner" data-percent="60.7"></div>
+            </div>
+        </div>
+        <div class="skill-container">
+            
+            <section class="information-section">
+                <p>ОСНОВНАЯ ИНФОРМАЦИЯ О ПЕРСОНАЖЕ</p>
+                <p>ИЗУЧЕННЫЕ СПОСОБНОСТИ:</p>
+                <div>
+                    <p>тема 1</p>
+                    <p>тема 2</p>
+                    <p>тема 3</p>
+                    <p>тема 4</p>
+                    <p>тема 5</p>
+                </div>
+        
+            </section>
+            <section class="road-section">
+                <div>
+                    <div class="topic">
+                        <p>название темы</p>
+                    </div>
+                    <div class="topic">
+                        <p>название темы</p>
+                    </div>
+                    <div class="topic">
+                        <p>название темы</p>
+                    </div>
+                    <div class="topic">
+                        <p>название темы</p>
+                    </div>
+                </div>
+            </section>
+            <section class="available-topics">
+                <p>название темы</p>
+                <p>название темы</p>
+                <p>название темы</p>
+                <p>название темы</p>
+                <p>название темы</p>
+                <p>название темы</p>
+                <p>название темы</p>
+                <p>название темы</p>
+                <p>название темы</p>
+            </section>
+            <div class="links hidden">
+                <p>link 1</p>
+                <p>link 2</p>
+                <p>link 3</p>
+                <p>link 4</p>
+                <p>link 5</p>
+                <p>link 6</p>
+                <p>link 7</p>
+                <p>link 8</p>
+                <p>link 9</p>
+        
+            </div>
+        
+        </div>
+    </div>
+    
+    
 
+</main>
+<script src="../static/js/progress.js"> </script>
 {% endblock %}

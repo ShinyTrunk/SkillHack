@@ -7,6 +7,7 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+  /* overflow-y: hidden; */
 }
 
 .hidden {
@@ -668,7 +669,7 @@ input:checked+.slider:before {
 
 /* прогресс */
 
-.account-skills .progress-other {
+.progress-other {
   background-color: var(--dark);
   /* height: 3rem;   */
   /* border: 2px solid; */
@@ -691,14 +692,14 @@ input:checked+.slider:before {
 .account-container .account-skills>div:nth-child(3) .progress-other{
   border: 3px solid var(--yellow);
 } */
-.account-skills .progress-inner {
+ .progress-inner {
   background-color: var(--white-green);
   /* height: 2rem; */
   padding-right: 0.5rem;
   /* border-radius: 1rem; */
   /* margin: 1rem; */
 }
-.account-skills .progress-inner>p {
+ .progress-inner>p {
   text-align: left;
   font-size: 1.5rem;
   font-weight: bold;
@@ -720,3 +721,53 @@ input:checked+.slider:before {
 /* .personal-form  div:nth-child(1) {
   color:red;
 } */
+
+/* отдельный скилл стили  */
+.skill-wrapper {
+  height: 100%;
+}
+.skill-wrapper .header-skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--white);
+  margin-top: 2rem;
+  background-color: var();
+}
+
+.skill-wrapper .header-skill h1 {
+  font-family: "Press Start 2P Regular";
+  font-size: 3rem;
+}
+.skill-wrapper .header-skill .progress-other {
+  width: 60%;
+  background-color: var(--var5);
+  /* font-family: "Press Start 2P Regular"; */
+}
+
+
+.skill-container {
+  display: flex;
+  align-items: center;
+  padding: 0 3rem;
+  /* justify-content: space-between; */
+  color: white;
+  height: 100%;
+}
+
+.skill-container .information-section {
+  flex-grow: 0.5;
+  height: auto;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  font-size: 1.5rem;
+  height: 50%;
+  background-color: var(--dark);
+  border: 2px dashed var(--white-green);
+  padding: 1rem;
+}
+.skill-container .road-section {
+  flex-grow: 3;
+}
+
