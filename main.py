@@ -1,8 +1,6 @@
 import json
 import os
-import string
 
-import wtforms
 from faker import Faker
 
 from flask import Flask, render_template, redirect, url_for, request
@@ -54,7 +52,10 @@ def validate_profile():
         user = db.session.query(User).filter(User.email == current_user.email).first()
         if user:
             user.username = username
-            user.password = password
+            user.set_password(password)
+            db.session.commit()
+        else:
+            print('User not found')
         return json.dumps(response)
     else:
         response = {'status': 'error', 'messages': []}
