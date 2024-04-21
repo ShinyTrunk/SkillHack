@@ -4,9 +4,7 @@ out
 gen
 /db
 /db/main.db
-/__pycache__
-/models/__pycache__
-/forms/__pycache
+**/__pycache__
 /venv
 ### Flask template
 instance/*
