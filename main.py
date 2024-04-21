@@ -10,7 +10,7 @@ from database_init import db
 from models.users import User
 from forms.register_form import RegistrationForm
 from forms.login_form import LoginForm
-from flask_login import LoginManager, login_user, login_required, logout_user
+from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 
 fake = Faker()
 
@@ -51,6 +51,10 @@ def validate_profile():
     confirm_password = request.json['confirm_password']
     if username and 3 <= len(username) <= 20 and password and 8 <= len(password) <= 30 and password == confirm_password:
         response = {'status': 'success'}
+        user = db.session.query(User).filter(User.email == current_user.email).first()
+        if user:
+            user.username = username
+            user.password = password
         return json.dumps(response)
     else:
         response = {'status': 'error', 'messages': []}
