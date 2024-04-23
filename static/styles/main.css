@@ -751,7 +751,7 @@ input:checked+.slider:before {
   display: flex;
   align-items: center;
   padding: 0 3rem;
-  justify-content: space-between;
+  justify-content: center;
   color: white;
   height: 90%;
 }
@@ -785,16 +785,27 @@ input:checked+.slider:before {
   /* flex-grow: 3; */
 /* } */
 .road-section {
-  width: 100%;
+  /* width: 10%; */
+  /* transform-origin: right top;  */
+  /* scroll-behavior: smooth; */
+  height: 50vh;
+  width: 80vw;
+  /* background-color: var(--dark); */
+  border: 2px solid var(--white);
+  /* margin: 30rem; */
+  /* overflow-y: hidden; */
+  overflow-x: scroll;
+  /* padding-left: 20rem; */
   scroll-behavior: smooth;
-  height: 100rem;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  /* position: absolute;
+  left: 50rem; */
   align-items: center;  
-  transform: rotate(-90deg);
+  /* transform: rotate(-90deg);
   /* transform-origin: right top; */
-  overflow-y: auto;
-  overflow-x: hidden;
+  /* overflow-y: auto;
+  overflow-x: hidden; */
   /* transform: rotate(-90deg); */
   /* transform-origin: right top;  */
 }
@@ -802,16 +813,20 @@ input:checked+.slider:before {
   display: none;
 } */
 .road-container {
-  transform: rotate(90deg);
-  
-  
+  /* transform: rotate(90deg);
+   */
 
-  background-color: var(--white-green);
+
+  /* background-color: var(--dark); */
   /* height: 100%; */
   display: flex;
-  justify-content: space-between;
-  width: auto ;
-  height: 0.5rem;
+  /* justify-content: space-between; */
+  /* width: auto ; */
+  align-items: flex-start;
+  position: relative;
+  /* height: 100%; */
+  /* margin-left: 20rem; */
+  /* height: 0.5rem; */
   /* border: 2px solid var(--red); */
   /* transform: rotate(90deg);
   transform-origin: right top; */
@@ -819,27 +834,46 @@ input:checked+.slider:before {
   justify-content: space-between; */
 
 }
+.road-container::before {
+  content: "";
+  position: absolute;
+  height: 0.5rem;
+  width: 100%;
+  z-index: -1;
+  display: block;
+  background-color: var(--white-green);
+  top: 2.25rem;
 
+}
 
+.topic {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 
-.road-container .topic {
+  width: 15vw;
+  /* height: 10; */
+}
+
+.road-container .topic>span:nth-child(1) {
   /* transform: rotate(90deg); */
   /* transform-origin: right top; */
   content: "";
   display: block;
   width: 5rem;
   height: 5rem;
-  position: relative;
-  top: -2rem;
+  /* position: relative; */
+  /* top: -2rem; */
   border-radius: 5rem;
   background-color: var(--var5);
   border: 3px solid var(--dark);
   color: var(--white);
   transition: 0.5s;
-  margin: 0 3rem;
+  /* margin: 0 6rem;  */
   
 }
-.road-section .topic:hover {
+.road-section .topic>span:nth-child(1):hover   {
   /* width: 4.1rem;
   height: 4.1rem; */
 
@@ -851,12 +885,12 @@ input:checked+.slider:before {
   border: 2px solid var(--red);
   background-color: red;
 } */
-.road-container .topic span {
+.road-container .topic span:nth-child(2) {
   /* color: var(--white); */
-  position: relative;
-  bottom: -6rem;
-  left: -2rem;
+  /* position: relative; */
+  /* bottom: -6rem;
+  left: -2rem; */
   font-size: 1.2rem;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 
 }
