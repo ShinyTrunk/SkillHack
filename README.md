@@ -152,3 +152,5 @@
     <p>Данный роут используется для страницы профиля пользователя.</p>
   </li>
 </ul>
+<br>
+<h2><a href="https://docs.google.com/presentation/d/1OgMGZ-Y2p9DVWDqgBIqulSIzVQIB6E0p/edit?usp=sharing&ouid=112015963494427546101&rtpof=true&sd=true">Презентация</a></h2>
