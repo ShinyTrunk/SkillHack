@@ -1,10 +1,169 @@
 {% extends "base.html" %}
 
 {% block content %}
-<main>
-    <a href="{{ url_for('skill_page', skill_name='python') }}">PYTHON</a>
-    <a href="{{ url_for('skill_page', skill_name='java') }}">JAVA</a>
-    <a href="{{ url_for('skill_page', skill_name='html') }}">HTML</a>
-</main>
-
+    <link rel="stylesheet" href="../static/styles/all_skills.css">
+    <main>
+        <section class="all-skills-container">
+            {% if current_user.is_authenticated %}
+            <div class="skill">
+                <div class="progress-other">
+                    <div class="progress-inner" data-percent="30"></div>
+                </div>
+                <div class="background-card-line">
+                    <img src="../static/img/css-coding.png">
+                </div>
+                <p>Путь <br>CSS-ера</p>
+                <a href="{{ url_for('skill_page', skill_name='css') }}" class="available-skill-btn">Начать</a>
+            </div>
+            {% else %}
+            <div class="skill">
+                <div class="progress-other">
+                    <div class="progress-inner" data-percent="0"></div>
+                </div>
+                <div class="background-card-line">
+                    <img src="../static/img/css-coding.png">
+                </div>
+                <p>Путь <br>CSS-ера</p>
+                <a href="{{ url_for('login_page') }}" class="available-skill-btn">Начать</a>
+            </div>
+            {% endif %}
+            <div class="skill">
+                <div class="progress-other invisible">
+                    <div class="progress-inner" data-percent="10"></div>
+                </div>
+                <div class="background-card-line">
+                    <img src="../static/img/free-icon-wall-clock.png">
+                </div>
+                <p>Скоро <br>появится</p>
+                <a href="{{ url_for('skill_page', skill_name='css') }}" class="available-skill-btn invisible disabled">
+                    Начать</a>
+            </div>
+            <div class="skill">
+                <div class="progress-other invisible">
+                    <div class="progress-inner" data-percent="10"></div>
+                </div>
+                <div class="background-card-line">
+                    <img src="../static/img/free-icon-wall-clock.png">
+                </div>
+                <p>Скоро <br>появится</p>
+                <a href="{{ url_for('skill_page', skill_name='css') }}" class="available-skill-btn invisible disabled">
+                    Начать</a>
+            </div>
+            <div class="skill">
+                <div class="progress-other invisible">
+                    <div class="progress-inner" data-percent="10"></div>
+                </div>
+                <div class="background-card-line">
+                    <img src="../static/img/free-icon-wall-clock.png">
+                </div>
+                <p>Скоро <br>появится</p>
+                <a href="{{ url_for('skill_page', skill_name='css') }}" class="available-skill-btn invisible disabled">
+                    Начать</a>
+            </div>
+            <div class="skill">
+                <div class="progress-other invisible">
+                    <div class="progress-inner" data-percent="10"></div>
+                </div>
+                <div class="background-card-line">
+                    <img src="../static/img/free-icon-wall-clock.png">
+                </div>
+                <p>Скоро <br>появится</p>
+                <a href="{{ url_for('skill_page', skill_name='css') }}" class="available-skill-btn invisible disabled">
+                    Начать</a>
+            </div>
+            <div class="skill">
+                <div class="progress-other invisible">
+                    <div class="progress-inner" data-percent="10"></div>
+                </div>
+                <div class="background-card-line">
+                    <img src="../static/img/free-icon-wall-clock.png">
+                </div>
+                <p>Скоро <br>появится</p>
+                <a href="{{ url_for('skill_page', skill_name='css') }}" class="available-skill-btn invisible disabled">
+                    Начать</a>
+            </div>
+            <div class="skill">
+                <div class="progress-other invisible">
+                    <div class="progress-inner" data-percent="10"></div>
+                </div>
+                <div class="background-card-line">
+                    <img src="../static/img/free-icon-wall-clock.png">
+                </div>
+                <p>Скоро <br>появится</p>
+                <a href="{{ url_for('skill_page', skill_name='css') }}" class="available-skill-btn invisible disabled">
+                    Начать</a>
+            </div>
+            <div class="skill">
+                <div class="progress-other invisible">
+                    <div class="progress-inner" data-percent="10"></div>
+                </div>
+                <div class="background-card-line">
+                    <img src="../static/img/free-icon-wall-clock.png">
+                </div>
+                <p>Скоро <br>появится</p>
+                <a href="{{ url_for('skill_page', skill_name='css') }}" class="available-skill-btn invisible disabled">
+                    Начать</a>
+            </div>
+            <div class="skill">
+                <div class="progress-other invisible">
+                    <div class="progress-inner" data-percent="10"></div>
+                </div>
+                <div class="background-card-line">
+                    <img src="../static/img/free-icon-wall-clock.png">
+                </div>
+                <p>Скоро <br>появится</p>
+                <a href="{{ url_for('skill_page', skill_name='css') }}" class="available-skill-btn invisible disabled">
+                    Начать</a>
+            </div>
+            <div class="skill">
+                <div class="progress-other invisible">
+                    <div class="progress-inner" data-percent="10"></div>
+                </div>
+                <div class="background-card-line">
+                    <img src="../static/img/free-icon-wall-clock.png">
+                </div>
+                <p>Скоро <br>появится</p>
+                <a href="{{ url_for('skill_page', skill_name='css') }}" class="available-skill-btn invisible disabled">
+                    Начать</a>
+            </div>
+            {#            <div class="skill">#}
+            {#                <img src="../static/img/time-left-128.png">#}
+            {#                <p>Скоро появится</p>#}
+            {#            </div>#}
+            {#            <div class="skill">#}
+            {#                <img src="../static/img/time-left-128.png">#}
+            {#                <p>Скоро появится</p>#}
+            {#            </div>#}
+            {#            <div class="skill">#}
+            {#                <img src="../static/img/time-left-128.png">#}
+            {#                <p>Скоро появится</p>#}
+            {#            </div>#}
+            {#            <div class="skill">#}
+            {#                <img src="../static/img/time-left-128.png">#}
+            {#                <p>Скоро появится</p>#}
+            {#            </div>#}
+            {#            <div class="skill">#}
+            {#                <img src="../static/img/time-left-128.png">#}
+            {#                <p>Скоро появится</p>#}
+            {#            </div>#}
+            {#            <div class="skill">#}
+            {#                <img src="../static/img/time-left-128.png">#}
+            {#                <p>Скоро появится</p>#}
+            {#            </div>#}
+            {#            <div class="skill">#}
+            {#                <img src="../static/img/time-left-128.png">#}
+            {#                <p>Скоро появится</p>#}
+            {#            </div>#}
+            {#            <div class="skill">#}
+            {#                <img src="../static/img/time-left-128.png">#}
+            {#                <p>Скоро появится</p>#}
+            {#            </div>#}
+            {#            <div class="skill">#}
+            {#                <img src="../static/img/time-left-128.png">#}
+            {#                <p>Скоро появится</p>#}
+            {#            </div>#}
+        </section>
+    </main>
+    {#    <script src="../static/js/account.js"></script>#}
+    <script src="../static/js/progress.js"></script>
 {% endblock %}

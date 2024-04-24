@@ -1,0 +1,89 @@
+.all-skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5rem 5rem;
+    margin: 0 auto;
+    height: calc(100vh - 50px);
+}
+
+.all-skills-container > .skill {
+    transition: 0.25s;
+    font-family: "Press Start 2P Regular";
+    font-size: 1.7rem;
+    color: var(--white);
+    border: 0.4rem solid var(--white-green);
+    /*border-radius: 10px;*/
+    width: 18%;
+    margin-bottom: 2rem;
+    padding-bottom: 5rem;
+    background-color: var(--dark);
+    position: relative;
+    text-align: center;
+}
+
+.all-skills-container .skill:hover {
+    transform: scale(1.09);
+}
+
+.all-skills-container .skill img {
+    display: inline-block;
+    transition: 0.25s;
+    width: 30%;
+}
+
+.all-skills-container .skill:hover img {
+    transform: scale(1.09);
+}
+
+.all-skills-container .skill .progress-other {
+    background-color: var(--dark);
+    padding: 0.6rem;
+}
+
+.all-skills-container .skill .progress-inner {
+    background-color: var(--white-green);
+}
+
+.all-skills-container .skill .progress-inner > p {
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.2rem;
+    text-align: right;
+}
+
+.all-skills-container .skill p {
+    padding-bottom: 2rem;
+}
+
+.all-skills-container .skill .available-skill-btn {
+    transition: 0.2s;
+    border: 0.2rem solid var(--white-red);
+    background-color: var(--white-red);
+    color: var(--white);
+    padding: 1.5rem;
+}
+
+.all-skills-container .skill .available-skill-btn:hover {
+    background-color: var(--white-blue);
+    border-color: var(--white-blue);
+
+}
+
+.all-skills-container .skill .background-card-line {
+    background-color: var(--white-green);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
