@@ -5,12 +5,7 @@
         <div class="main-container">
             <div class="main-content left-column">
                 <h1>SKILLHACK<br>качай своего героя - качай свои скилы</h1>
-                <a class="red-button"
-                        {% if current_user.is_authenticated %}
-                            href="{{ url_for('all_skills_page') }}"
-                        {% else %}
-                            href="{{ url_for('login_page') }}
-                        {% endif %}">к навыкам</a>
+                <a class="red-button" href="{{ url_for('all_skills_page') }}">к навыкам</a>
             </div>
             <div class="video-box right-column">
                 <video preload="auto" autoplay="autoplay" loop="loop" muted="" playsinline="playsinline">
