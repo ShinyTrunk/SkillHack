@@ -26,13 +26,13 @@
                 </form>
                 <a class="red-button edit-button">РЕДАКТИРОВАТЬ</a>
                 <a href="{{ url_for('logout') }}" class="red-button edit-button">ВЫЙТИ</a>
-            </section>
+            </section><div class="progress-other">
+                        <div class="progress-inner" data-percent="10"></div>
+                    </div>
             <section class="account-skills">
                 <a class="skill" href="{{ url_for('skill_page', skill_name='python') }}">
                     <p>PYTHON</p>
-                    <div class="progress-other">
-                        <div class="progress-inner" data-percent="10"></div>
-                    </div>
+                    
                 </a>
                 <a class="skill" href="{{ url_for('skill_page', skill_name='java') }}">
                     <p>JAVA</p>
