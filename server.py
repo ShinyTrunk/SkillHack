@@ -94,6 +94,8 @@ def all_skills_page():
 
 @app.route('/skill/<skill_name>', methods=['GET', 'POST'])
 def skill_page(skill_name):
+    if not current_user.is_authenticated:
+        return redirect(url_for('login_page'))
     try:
         with open(f'static/roadmaps/roadmap_{skill_name}.json', encoding="utf-8") as json_file:
             roadmap_data = json.load(json_file)
