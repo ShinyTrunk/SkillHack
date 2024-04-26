@@ -1,3 +1,4 @@
+// прогресс
 let inners = document.querySelectorAll(".progress-inner");
 inners.forEach((inner) => {
     let percent = parseFloat(inner.dataset.percent);

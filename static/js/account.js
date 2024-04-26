@@ -118,4 +118,3 @@ editButton.addEventListener("click", function (event) {
 
 
 
-// прогресс

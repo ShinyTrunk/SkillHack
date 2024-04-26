@@ -1,111 +1,110 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <link rel="stylesheet" href="../static/styles/skill.css">
-    <main>
-        <div class="skill-wrapper">
+<main>
+    <div class="skill-wrapper">
 
-            <div class="skill-container">
+        <div class="skill-container">
 
-                <h1>{{ skill_name }}</h1>
-                <section class="road-section">
-                    <div class="road-container">
-                        {% if skill_name == "css" %}
-                        {% for topic in roadmap_data %}
-                        <div class="topic">
-                            <span></span>
-                            <span>название темы1</span>
-                            <!-- <p>название темы</p> -->
-                        </div>
-                        <div class="topic">
-                            <span></span>
-                            <span>название темы</span>
-                            <!-- <p>название темы</p> -->
-                        </div>
-                        <div class="topic">
-                            <span></span>
-                            <span>название темы</span>
-                            <!-- <p>название темы</p> -->
-                        </div>
-                        <div class="topic">
-                            <span></span>
-                            <span>название темы1</span>
-                            <!-- <p>название темы</p> -->
-                        </div>
-                        <div class="topic">
-                            <span></span>
-                            <span>название темы</span>
-                            <!-- <p>название темы</p> -->
-                        </div>
-                        <div class="topic">
-                            <span></span>
-                            <span>название темы</span>
-                            <!-- <p>название темы</p> -->
-                        </div>
+            <h1>{{ skill_name }}</h1>
+            <section class="road-section">
+                <div class="road-container">
+                    <div class="topic">
+                        <span></span>
+                        <span>название темы1</span>
+                        <!-- <p>название темы</p> -->
+                    </div>
+                    <div class="topic">
+                        <span></span>
+                        <span>название темы</span>
+                        <!-- <p>название темы</p> -->
+                    </div>
+                    <div class="topic">
+                        <span></span>
+                        <span>название темы</span>
+                        <!-- <p>название темы</p> -->
+                    </div>
+                    <div class="topic">
+                        <span></span>
+                        <span>название темы1</span>
+                        <!-- <p>название темы</p> -->
+                    </div>
+                    <div class="topic">
+                        <span></span>
+                        <span>название темы</span>
+                        <!-- <p>название темы</p> -->
+                    </div>
+                    <div class="topic">
+                        <span></span>
+                        <span>название темы</span>
+                        <!-- <p>название темы</p> -->
+                    </div>
 
-                        <div class="topic">
-                            <span></span>
-                            <span>название темы1</span>
-                            <!-- <p>название темы</p> -->
-                        </div>
-                        <div class="topic">
-                            <span></span>
-                            <span>название темы</span>
-                            <!-- <p>название темы</p> -->
-                        </div>
-                        <div class="topic">
-                            <span></span>
-                            <span>название темы</span>
-                            <!-- <p>название темы</p> -->
-                        </div>
+                    <div class="topic">
+                        <span></span>
+                        <span>название темы1</span>
+                        <!-- <p>название темы</p> -->
+                    </div>
+                    <div class="topic">
+                        <span></span>
+                        <span>название темы</span>
+                        <!-- <p>название темы</p> -->
+                    </div>
+                    <div class="topic">
+                        <span></span>
+                        <span>название темы</span>
+                        <!-- <p>название темы</p> -->
+                    </div>
 
-                        <div class="topic">
-                            <span></span>
-                            <span>название темы1</span>
-                            <!-- <p>название темы</p> -->
-                        </div>
-                        <div class="topic">
-                            <span></span>
-                            <span>название темы</span>
-                            <!-- <p>название темы</p> -->
-                        </div>
-                        <div class="topic">
-                            <span></span>
-                            <span>название темы</span>
-                            <!-- <p>название темы</p> -->
-                        </div>
+                    <div class="topic">
+                        <span></span>
+                        <span>название темы1</span>
+                        <!-- <p>название темы</p> -->
+                    </div>
+                    <div class="topic">
+                        <span></span>
+                        <span>название темы</span>
+                        <!-- <p>название темы</p> -->
+                    </div>
+                    <div class="topic">
+                        <span></span>
+                        <span>название темы</span>
+                        <!-- <p>название темы</p> -->
+                    </div>
 
+
+
+                </div>
+
+            </section>
+            <div class="progress-other ">
+                <div class="progress-inner" data-percent="80"></div>
+            </div>
+        </div>
+         <div class="links-information">
+                    <h2>Lorem ipsum dolor</h2>
+
+                    <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam, impedit!</span>
+                    <div class="links">
+                        <p>ССЫЛКИ ПО ТЕМЕ:</p>
+
+                        <ul>
+                            <li><a>Loremdjidjeifjeifj/ijfierjfie</a></li>
+                            <li><a>Loremefergeurgheriu/smsmm</a></li>
+
+                        </ul>
+
+                        <a class="red-button ready-button">ТЕМА ПРОЙДЕНА</a>
 
                     </div>
 
-                </section>
-                <div class="progress-other ">
-                    <div class="progress-inner" data-percent="80"></div>
-                </div>
-            </div>
-            <div class="links-information">
-                <h2>Lorem ipsum dolor</h2>
-
-                <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam, impedit!</span>
-                <div class="links">
-                    <p>ССЫЛКИ ПО ТЕМЕ:</p>
-
-                    <ul>
-                        <li><a>Loremdjidjeifjeifj/ijfierjfie</a></li>
-                        <li><a>Loremefergeurgheriu/smsmm</a></li>
-
-                    </ul>
-
-                    <a class="red-button ready-button">ТЕМА ПРОЙДЕНА</a>
-
                 </div>
 
-            </div>
-
-        </div>
+    </div>
 
 
-    </main>
-    <script src="../static/js/progress.js"></script>
-    <script src="../static/js/one_skill.js"></script>
+
+</main>
+<script src="../static/js/progress.js"> </script>
+<script src="../static/js/one_skill.js"></script>
 {% endblock %}
