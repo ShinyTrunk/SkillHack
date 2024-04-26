@@ -1,6 +1,7 @@
 import json
 import os
 
+import requests
 from faker import Faker
 
 from flask import Flask, render_template, redirect, url_for, request
@@ -132,7 +133,14 @@ def login_page():
 
 @app.route('/about-us')
 def about_us_page():
-    pass
+    response = requests.get('https://www.cbr-xml-daily.ru/daily_json.js')
+    usd_exchange = response.json()["Valute"]["USD"]["Value"]
+    return render_template('about_us.html', usd_exchange=usd_exchange)
+
+
+@app.route('/contact-us')
+def contact_us_page():
+    return render_template('contact_us.html')
 
 
 @app.route('/profile')

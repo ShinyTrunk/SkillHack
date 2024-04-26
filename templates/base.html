@@ -18,8 +18,8 @@
         {% if current_user.is_authenticated %}
             <nav>
                 <a href="{{ url_for('all_skills_page') }}">навыки</a>
-                <a href="#">о нас</a>
-                <a href="#">обратная связь</a>
+                <a href="{{ url_for('about_us_page') }}">о нас</a>
+                <a href="{{ url_for('contact_us_page') }}">обратная связь</a>
                 <a href="{{ url_for('profile_page') }}">профиль</a>
             </nav>
         {% else %}
