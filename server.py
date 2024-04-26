@@ -93,6 +93,12 @@ def all_skills_page():
 
 @app.route('/skill/<skill_name>')
 def skill_page(skill_name):
+    try:
+        with open(f'static/roadmaps/roadmap_{skill_name}.json', encoding="utf-8") as json_file:
+            roadmap_data = json.load(json_file)
+    except FileNotFoundError as error:
+        raise error
+    # roadmap = json.load('../static/roadmaps/roadmap_css.json')
     params = {'title': f'Навык {skill_name.capitalize()}', 'skill_name': skill_name}
     return render_template('skill.html', **params)
 
