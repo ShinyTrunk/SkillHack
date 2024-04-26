@@ -97,10 +97,11 @@ def skill_page(skill_name):
     try:
         with open(f'static/roadmaps/roadmap_{skill_name}.json', encoding="utf-8") as json_file:
             roadmap_data = json.load(json_file)
+            # print(len(roadmap_data))
     except FileNotFoundError as error:
         raise error
     # roadmap = json.load('../static/roadmaps/roadmap_css.json')
-    params = {'title': f'Навык {skill_name.capitalize()}', 'skill_name': skill_name}
+    params = {'title': f'Навык {skill_name.capitalize()}', 'skill_name': skill_name, 'roadmap_data': roadmap_data}
     return render_template('skill.html', **params)
 
 
@@ -133,14 +134,14 @@ def login_page():
     return render_template('register.html', **params)
 
 
-@app.route('/about-us', methods=['GET', 'POST'])
+@app.route('/about-us', methods=['GET'])
 def about_us_page():
     response = requests.get('https://www.cbr-xml-daily.ru/daily_json.js')
     usd_exchange = response.json()["Valute"]["USD"]["Value"]
     return render_template('about_us.html', usd_exchange=usd_exchange)
 
 
-@app.route('/contact-us', methods=['GET', 'POST'])
+@app.route('/contact-us', methods=['GET'])
 def contact_us_page():
     return render_template('contact_us.html')
 

@@ -4,76 +4,18 @@
     <link rel="stylesheet" href="../static/styles/skill.css">
     <main>
         <div class="skill-wrapper">
-
             <div class="skill-container">
 
                 <h1>{{ skill_name }}</h1>
                 <section class="road-section">
                     <div class="road-container">
-                        <div class="topic">
-                            <span></span>
-                            <span>название темы1</span>
-                            <!-- <p>название темы</p> -->
-                        </div>
-                        <div class="topic">
-                            <span></span>
-                            <span>название темы</span>
-                            <!-- <p>название темы</p> -->
-                        </div>
-                        <div class="topic">
-                            <span></span>
-                            <span>название темы</span>
-                            <!-- <p>название темы</p> -->
-                        </div>
-                        <div class="topic">
-                            <span></span>
-                            <span>название темы1</span>
-                            <!-- <p>название темы</p> -->
-                        </div>
-                        <div class="topic">
-                            <span></span>
-                            <span>название темы</span>
-                            <!-- <p>название темы</p> -->
-                        </div>
-                        <div class="topic">
-                            <span></span>
-                            <span>название темы</span>
-                            <!-- <p>название темы</p> -->
-                        </div>
-
-                        <div class="topic">
-                            <span></span>
-                            <span>название темы1</span>
-                            <!-- <p>название темы</p> -->
-                        </div>
-                        <div class="topic">
-                            <span></span>
-                            <span>название темы</span>
-                            <!-- <p>название темы</p> -->
-                        </div>
-                        <div class="topic">
-                            <span></span>
-                            <span>название темы</span>
-                            <!-- <p>название темы</p> -->
-                        </div>
-
-                        <div class="topic">
-                            <span></span>
-                            <span>название темы1</span>
-                            <!-- <p>название темы</p> -->
-                        </div>
-                        <div class="topic">
-                            <span></span>
-                            <span>название темы</span>
-                            <!-- <p>название темы</p> -->
-                        </div>
-                        <div class="topic">
-                            <span></span>
-                            <span>название темы</span>
-                            <!-- <p>название темы</p> -->
-                        </div>
-
-
+                        {% for topic in roadmap_data %}
+                            <div class="topic">
+                                <span></span>
+                                <span>{{ topic['title'] }}</span>
+                                <!-- <p>название темы</p> -->
+                            </div>
+                        {% endfor %}
                     </div>
 
                 </section>
@@ -82,23 +24,41 @@
                 </div>
             </div>
             <div class="links-information">
-                <h2>Lorem ipsum dolor</h2>
+                <h2>Тема не выбрана</h2>
 
-                <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam, impedit!</span>
+                <span> </span>
                 <div class="links">
                     <p>ССЫЛКИ ПО ТЕМЕ:</p>
 
                     <ul>
-                        <li><a>Loremdjidjeifjeifj/ijfierjfie</a></li>
-                        <li><a>Loremefergeurgheriu/smsmm</a></li>
-
+                        <li><a>Ссылки отсутствуют, так как тема не выбрана</a></li>
                     </ul>
-
-                    <a class="red-button ready-button">ТЕМА ПРОЙДЕНА</a>
+                    <a class="red-button ready-button hidden">ТЕМА ПРОЙДЕНА</a>
 
                 </div>
-
             </div>
+            {% for topic in roadmap_data %}
+                <div class="links-information hidden">
+
+                    <h2>{{ topic['title'] }}</h2>
+
+                    <span>{{ topic['description'] }}</span>
+                    <div class="links">
+                        <p>ССЫЛКИ ПО ТЕМЕ:</p>
+
+                        <ul>
+                            {% for link in topic['links'] %}
+                                <li><a href="{{ link }}">Кликни на меня(я ссылка на статью)</a></li>
+                            {% endfor %}
+                        </ul>
+                        <a class="red-button ready-button">ТЕМА ПРОЙДЕНА</a>
+
+                    </div>
+                </div>
+            {% endfor %}
+
+
+        </div>
 
         </div>
 

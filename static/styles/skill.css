@@ -188,6 +188,11 @@ left: -2rem; */
   margin-bottom: 0.5rem;
 }
 
+.links li a {
+  color: var(--red);
+  padding-bottom: 0.2rem;
+}
+
 .ready-button {
   align-items: center;
   margin: 1rem auto;

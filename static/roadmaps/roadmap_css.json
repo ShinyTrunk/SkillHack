@@ -14,7 +14,7 @@
   {
     "title": "Селекторы в CSS",
     "description": "На данном этапе мы узнаем, что такое селекторы в CSS, и как они работают.",
-    "links":[ "https://developer.mozilla.org/ru/docs/Learn/CSS/Building_blocks/Selectors"],
+    "links":["https://developer.mozilla.org/ru/docs/Learn/CSS/Building_blocks/Selectors"],
     "completed": false
   },
   {
@@ -32,7 +32,7 @@
   {
     "title": "Основы раскладки, поток, position.",
     "description": "",
-    "links": "https://web.dev/learn/css/layout?hl=ru",
+    "links": ["https://web.dev/learn/css/layout?hl=ru"],
     "completed": false
   },
   {
