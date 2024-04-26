@@ -80,19 +80,19 @@ def validate_profile():
 
 
 @app.route('/')
-@app.route('/index')
+@app.route('/index', methods=['GET', 'POST'])
 def index():
     params = {"title": "ГЛАВНАЯ"}
     return render_template('index.html', **params)
 
 
-@app.route('/all-skills')
+@app.route('/all-skills', methods=['GET', 'POST'])
 def all_skills_page():
     params = {"title": "Навыки"}
     return render_template('all_skills.html', **params)
 
 
-@app.route('/skill/<skill_name>')
+@app.route('/skill/<skill_name>', methods=['GET', 'POST'])
 def skill_page(skill_name):
     try:
         with open(f'static/roadmaps/roadmap_{skill_name}.json', encoding="utf-8") as json_file:
@@ -106,6 +106,8 @@ def skill_page(skill_name):
 
 @app.route('/sign-in-sign-up', methods=['GET', 'POST'])
 def login_page():
+    if current_user.is_authenticated:
+        return redirect(url_for('profile_page'))
     register_form = RegistrationForm()
     login_form = LoginForm()
     params = {'register_form': register_form, 'login_form': login_form, "title": "Регистрация/Авторизация"}
@@ -131,20 +133,22 @@ def login_page():
     return render_template('register.html', **params)
 
 
-@app.route('/about-us')
+@app.route('/about-us', methods=['GET', 'POST'])
 def about_us_page():
     response = requests.get('https://www.cbr-xml-daily.ru/daily_json.js')
     usd_exchange = response.json()["Valute"]["USD"]["Value"]
     return render_template('about_us.html', usd_exchange=usd_exchange)
 
 
-@app.route('/contact-us')
+@app.route('/contact-us', methods=['GET', 'POST'])
 def contact_us_page():
     return render_template('contact_us.html')
 
 
-@app.route('/profile')
+@app.route('/profile', methods=['GET', 'POST'])
 def profile_page():
+    if not current_user.is_authenticated:
+        return redirect(url_for('login_page'))
     params = {'title': "Профиль"}
     return render_template('account.html', **params)
 
