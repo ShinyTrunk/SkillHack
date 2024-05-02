@@ -5,13 +5,13 @@ from flask_login import UserMixin
 
 
 class User(db.Model, UserMixin):
-    __tablename__ = 'users'
+    __tablename__ = "users"
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     username = db.Column(db.String, unique=True, nullable=False)
     email = db.Column(db.String, unique=True, nullable=False)
     hashed_password = db.Column(db.String, nullable=False)
-    skills = db.relationship("Skill", backref='user', lazy=True)
+    skills = db.relationship("Skill", backref="user", lazy=True)
 
     def set_password(self, password):
         self.hashed_password = generate_password_hash(password)

@@ -1,0 +1,120 @@
+.account-container {
+    max-width: 120rem;
+    padding: 0.5rem 1rem;
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: space-around;
+    margin: 2rem auto;
+    /* margin-top: 5rem; */
+    /* align-items: stretch; */
+}
+
+.save-button {
+    border-color: var(--white);
+}
+
+.save-button:hover {
+    border-color: var(--red);
+}
+
+.personal-data {
+    height: 70%;
+
+    background-color: var(--dark);
+    display: flex;
+    justify-content: center;
+    color: var(--white);
+    flex-direction: column;
+    padding: 1rem 2rem;
+    border: 3px solid var(--white-green);
+    font-size: 1.4rem;
+}
+
+.personal-data img {
+    width: 20rem;
+
+}
+
+.personal-data div {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.personal-data input {
+    background-color: var(--white);
+    outline: none;
+    border: none;
+}
+
+.personal-data span {
+    /* color: var(--var5); */
+    color: var(--white-green);
+}
+
+.personal-data .edit-button {
+    background-color: var(--dark);
+    text-align: center;
+    padding: 0.5rem 0;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+
+
+
+
+.account-container .account-skills {
+
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+    /* background-color: #fff; */
+    flex-grow: 1;
+    margin-left: 2.5rem;
+    justify-content: center;
+    height: 100%;
+    /* border: 3px solid var(--white-green); */
+    /* margin-left: 3rem; */
+
+
+}
+
+.account-container .account-skills a {
+    color: var(--white);
+}
+
+.account-container .skill {
+    font-size: 1.5rem;
+    padding: 1rem 1rem;
+
+    background-color: var(--var5);
+    margin-bottom: 2.5rem;
+    border: 3px solid var(--var5);
+    transition: 0.5s;
+}
+
+.account-container .skill:hover {
+
+    border: 3px solid var(--white-green);
+
+    background-color: var(--dark);
+}
+
+.account-container .skill:nth-child(1) .progress-inner {
+    background-color: var(--white-green);
+}
+
+.account-container .skill:nth-child(2) .progress-inner {
+    background-color: var(--white-blue);
+}
+
+.account-container .skill:nth-child(3) .progress-inner {
+    background-color: var(--yellow);
+}
+
+.account-container .skill>p {
+    margin-bottom: 1rem;
+    font-family: "Press Start 2P Regular";
+}

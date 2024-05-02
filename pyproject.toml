@@ -1,0 +1,25 @@
+[project]
+name = "SkillHack"
+version = "0.1.0"
+description = "Default template for PDM package"
+# TODO: Максим, впиши себя как автора пж
+authors = [
+    {name = "rwerrx", email = "kira090308@yandex.ru"},
+    {name = "rwerrx", email = "kira090308@yandex.ru"},
+]
+
+requires-python = ">=3.12"
+readme = "README.md"
+license = {text = "MIT"}
+dependencies = [
+    "email-validator>=2.1.1",
+    "ruff>=0.4.2",
+]
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
