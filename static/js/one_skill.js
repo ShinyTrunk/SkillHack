@@ -4,11 +4,11 @@ function horizontalScroll(element) {
     
     element.addEventListener('wheel', function (event) {
         if (event.deltaY > 0){
-            element.scrollLeft += event.deltaY + 200;
+            element.scrollLeft += event.deltaY - 400;
             event.preventDefault();
         }
         else if (event.deltaY < 0) {
-            element.scrollLeft += event.deltaY - 200;
+            element.scrollLeft += event.deltaY + 400;
             event.preventDefault();
         }
       
